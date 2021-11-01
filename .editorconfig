@@ -12,7 +12,7 @@ insert_final_newline = true
 # Set default charset
 [*.{js,jsx}]
 charset = utf-8
-indent_size = 4
+indent_size = 2
 indent_style = tab
 
 # Tab indentation (no size specified)
@@ -22,9 +22,9 @@ indent_style = tab
 # Indentation override for all JS under lib directory
 [lib/**.js]
 indent_style = tab
-indent_size = 4
+indent_size = 2
 
 # Matches the exact files either package.json or .travis.yml
 [{package.json,.travis.yml}]
 indent_style = tab
-indent_size = 4
+indent_size = 2
