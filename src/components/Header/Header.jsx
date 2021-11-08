@@ -5,9 +5,6 @@ import { faSun, faMoon } from '@fortawesome/free-regular-svg-icons';
 import { useState} from 'react';
 
 export const Header = () => {
-	const [darkTheme, setDarkTheme] = useState(true);
-
-	const handleClick = () => setDarkTheme(darkTheme => !darkTheme);
 
 	return <div className="Header sticky-top">
 		<nav className="navbar align-items-stretch flex-nowrap px-0">
@@ -20,8 +17,7 @@ export const Header = () => {
 			<div className="d-flex align-items-center pe-4">
 				<ul className="flex-row navbar-nav">
 					<li className="nav-item">
-						{ darkTheme && <FontAwesomeIcon icon={faSun} size='lg' onClick={handleClick} style={{pointer: 'cursor'}} /> }
-						{ !darkTheme && <FontAwesomeIcon icon={faMoon} onClick={handleClick} /> }
+
 					</li>
 				</ul>
 			</div>
