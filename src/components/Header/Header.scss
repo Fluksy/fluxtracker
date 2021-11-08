@@ -1,5 +1,38 @@
 .Header {
 
-    height: 3em;
+    background: #242526;
+    border-bottom: 1px solid #4e5052 !important;
+    color: white;
 
+    .navbar {
+        height: 3.75rem;
+
+
+        span {
+
+            font-size: 1.2rem;
+            font-weight: 300;
+            padding-left: 0.7rem;
+
+        }
+
+        @media (min-width: 576px) {
+    
+            span.text-secondary {
+                border-left: 1px solid var(--text-secondary);
+            }
+        
+        }
+    }
+
+    .text-secondary {
+        color: var(--text-secondary) !important;
+    }
+
+    svg {
+        color: var(--text-secondary);
+        cursor: pointer;
+    }
 }
+
+

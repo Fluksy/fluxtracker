@@ -1,7 +1,8 @@
-export const Home = () => {
+import './Home.scss';
 
-    return <div className="container ml-5 mr-5 flex-grow-1">
-		content
+export const Home = () => {
+    return <div className="Home container">
+			contenu
 	</div>
 
 }

@@ -10,7 +10,25 @@ body {
 
 :root {
 
-  --bg-color-footer : #141414;
+  --font-color-header: white;
+  --bg-color--header: white;
+  --text-secondary: #b0b3b8;
+
+  --color-main-content : white;
+  --bg-color-main-content : #18191a;
+
   --color-footer : white;
+  --bg-color-footer : #18191a;
+
+  [theme='light'] {
+    --font-color-header: red;
+    --bg-color--header: red;
+    --text-secondary: #red;
   
+    --color-main-content : red;
+    --bg-color-main-content : #red;
+  
+    --color-footer : red;
+    --bg-color-footer : red;
+  }
 }
