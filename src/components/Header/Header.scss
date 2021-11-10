@@ -21,8 +21,22 @@
             span.text-secondary {
                 border-left: 1px solid var(--text-secondary);
             }
-        
+
         }
+
+        [class^="React"] {
+            // padding-bottom: 0;
+
+            [role='listbox'] {
+                background-color: var(--bg-color-main-content);
+                margin-top: 13px;
+    
+                span[class^='ReactFlagsSelect-module_selectFlag'] {
+                    padding-left: 0;
+                }
+            }
+        }
+        
     }
 
     .text-secondary {

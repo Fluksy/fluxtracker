@@ -1,10 +1,19 @@
 import './Header.scss';
+import { useTranslation } from 'react-i18next';
 import { ElrondLogo } from '../CustomIcons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun, faMoon } from '@fortawesome/free-regular-svg-icons';
-import { useState} from 'react';
+import ReactFlagsSelect from 'react-flags-select';
+import { useEffect, useState } from 'react';
+import { locales } from '../../locales';
 
 export const Header = () => {
+	const { i18n } = useTranslation();
+	const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+
+	useEffect(() => {
+		i18n.changeLanguage(currentLanguage);
+		localStorage.setItem('user-language', currentLanguage);
+	}, [currentLanguage])
+
 
 	return <div className="Header sticky-top">
 		<nav className="navbar align-items-stretch flex-nowrap px-0">
@@ -16,9 +25,14 @@ export const Header = () => {
 			</div>
 			<div className="d-flex align-items-center pe-4">
 				<ul className="flex-row navbar-nav">
-					<li className="nav-item">
-
-					</li>
+					<ReactFlagsSelect
+						countries={Object.keys(locales)}
+						showOptionLabel={false}
+						showSelectedLabel={false}
+						selected={currentLanguage}
+						style={{ backgroundColor: '#18191a' }}
+						onSelect={(code) => setCurrentLanguage(code)}
+					/>
 				</ul>
 			</div>
 		</nav>
