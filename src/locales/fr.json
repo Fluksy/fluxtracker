@@ -1,10 +1,10 @@
 {
-    "translation" : {
-        "footer" : {
-
-            "madeWith" : "Fait avec",
-            "byFluxy" : "par Fluxy"
-    
-        }
+    "footer" : {
+        "madeWith" : "Fait avec",
+        "byFluxy" : "par @Fluxy",
+        "notAffiliated" : "Projet non affilié avec Elrond"
+    },
+    "home": {
+        "WhenShouldIRestake" : "Quand dois-je restake mes EGLD ?"
     }
 }

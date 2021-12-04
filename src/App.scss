@@ -1,4 +1,6 @@
-.main-content {
+.App {
     background-color: var(--bg-color-main-content);
-    color: var(--color-main-content);
+    .main-content {
+        color: var(--color-main-content);
+    }
 }

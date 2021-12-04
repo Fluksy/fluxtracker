@@ -24,12 +24,12 @@
 
         }
 
-        [class^="React"] {
-            // padding-bottom: 0;
+        div[class^="ReactFlagsSelect"] {
+            padding-bottom: 0;
 
             [role='listbox'] {
                 background-color: var(--bg-color-main-content);
-                margin-top: 13px;
+                margin-top: 10px;
     
                 span[class^='ReactFlagsSelect-module_selectFlag'] {
                     padding-left: 0;
