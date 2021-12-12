@@ -1,19 +1,19 @@
 import './Footer.scss';
-import { HeartIcon } from '../CustomIcons';
+import { HeartIcon } from '../index';
 import { connect } from 'react-redux';
 
 const Footer = ({translations}) => {
 	return <div className="Footer d-flex justify-content-center align-items-center flex-column py-3">
 		<label>
-			{ translations.madeWith }
+			{translations.made_with}
 				<HeartIcon style={{height: '1em'}}/>
-			{ translations.byFluxy }
+			{`${translations.by} ${translations.fluxy}`}
 		</label>
 		<label>
-			{ translations.notAffiliated }
+			{ translations.not_affiliated }
 		</label>
 	</div>
 }
 
-const mapStateToProps = ({i18n}) => ({ translations: i18n?.translations[i18n.locale]?.footer })
+const mapStateToProps = ({i18n}) => ({ translations: i18n?.translations[i18n.locale] })
 export default connect(mapStateToProps)(Footer)

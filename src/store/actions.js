@@ -1,4 +1,4 @@
-export const SET_EGLD_ADDRESS = 'set egld address';
+export const SET_ACCOUNT = 'set egld account';
 export const SET_THEME = 'set theme';
 
 export const app_theme = {
@@ -6,10 +6,10 @@ export const app_theme = {
 	LIGHT_THEME: 'light'
 } 
 
-export const setAddress = (address) => {
+export const setAccount = (account) => {
 	return {
-		type: SET_EGLD_ADDRESS,
-		address
+		type: SET_ACCOUNT,
+		account
 	}
 }
 

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Footer from './Footer';
+import { Footer } from '../';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { middlewares } from '../../store/index';

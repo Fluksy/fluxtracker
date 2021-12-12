@@ -1,12 +1,11 @@
 .Header {
 
-    background: #242526;
+    background: var(--bg-color--header);
     border-bottom: 1px solid #4e5052 !important;
     color: white;
 
     .navbar {
         height: 3.75rem;
-
 
         span {
 

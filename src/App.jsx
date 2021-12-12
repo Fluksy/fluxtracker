@@ -1,8 +1,8 @@
-import { Home } from './components/Home';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import { Search, Header, Footer, ServiceProviderRewards} from './components';
+import 'react-toastify/dist/ReactToastify.min.css';
 import './App.scss';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -11,10 +11,11 @@ function App() {
 			<Header />
 			<div className="main-content flex-grow-1 container">
 				<Routes>
-					<Route path='/' exact element={<Home/>}></Route>
-					<Route path='/:address/rewards' exact element={<Home/>}></Route>
-					<Route path='*' element={<Home/>} />
+					<Route path='/search' exact element={<Search/>}></Route>
+					<Route path='/rewards/:addressOrHerotag' exact element={<ServiceProviderRewards/>}></Route>
+					<Route path='*' element={<Navigate to="/search" /> } />
 				</Routes>
+				<ToastContainer />
 			</div>
 			<Footer />
   	</div>

@@ -1,9 +1,9 @@
-import { app_theme, SET_EGLD_ADDRESS, SET_THEME } from "./actions";
+import { app_theme, SET_ACCOUNT, SET_THEME } from "./actions";
 
-export const address = (state = '', action) => {
+export const account = (state = {}, action) => {
 	switch (action.type) {
-		case SET_EGLD_ADDRESS:
-			return action.address
+		case SET_ACCOUNT:
+			return action.account
 		default:
 			return state;
 	}

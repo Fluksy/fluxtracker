@@ -1,10 +1,10 @@
 {
-    "footer" : {
-        "madeWith" : "Made with",
-        "byFluxy" : "by Fluxy",
-        "notAffiliated" : "Project not affiliated with Elrond"
-    },
-    "home": {
-        "WhenShouldIRestake" : "When should I restake my EGLD?"
-    }
+    "made_with" : "Made with",
+    "by" : "par",
+    "fluxy" : "@Fluxy",
+    "not_affiliated" : "Project not affiliated with Elrond",
+    "when_should_i_restake" : "When should I restake my EGLD?",
+    "write_here_your_egld_address_or_herotag" : "Write here your EGLD address or your herotag",
+    "track_my_rewards": "track my rewards",
+    "bad_address_or_herotag": "Bad address or herotag"
 }
