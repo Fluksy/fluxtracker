@@ -11,21 +11,23 @@ const ServiceProviderRewards = ({account, translations, setAccount}) => {
 	const [loading, setLoading] = useState();
 
 	useEffect(() => {
-		const searchAccountInfo = async () => {
+		(async () => {
 			if (!!addressOrHerotag) {
 				try {
+					setLoading(true);
 					const { data: account } = await getAccount(addressOrHerotag);
 					setAccount(account);
-		
+					setLoading(false);
 				} catch (error) {
-					toast.error(translations.bad_address_or_herotag, {theme: 'dark', position: toast.POSITION.BOTTOM_RIGHT})
+					toast.error(translations?.bad_address_or_herotag, {theme: 'dark', position: toast.POSITION.BOTTOM_RIGHT})
 					setNeedRedirect(true);
+					setLoading(false);
 				}
 			}
-		}
-		searchAccountInfo();
-	}, [addressOrHerotag] )
+		})()
+	}, [addressOrHerotag])
 
+	
 
 	return <div>
 		{needRedirect && <Navigate to={'/search'}/>}

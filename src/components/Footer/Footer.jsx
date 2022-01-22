@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 const Footer = ({translations}) => {
 	return <div className="Footer d-flex justify-content-center align-items-center flex-column py-3">
 		<label>
-			{translations.made_with}
+			{translations?.made_with}
 				<HeartIcon style={{height: '1em'}}/>
-			{`${translations.by} ${translations.fluxy}`}
+			{`${translations?.by} ${translations?.fluxy}`}
 		</label>
 		<label>
-			{ translations.not_affiliated }
+			{ translations?.not_affiliated }
 		</label>
 	</div>
 }
