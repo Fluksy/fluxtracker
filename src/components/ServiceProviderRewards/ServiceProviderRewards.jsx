@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { getAccount } from '../../config/api.elrond';
+import { getAccount, getProviders, getProviderInfos } from '../../config/api.elrond';
 import { toast } from 'react-toastify';
 import { setAccount } from '../../store/actions';
 import { Navigate, useParams } from 'react-router-dom';
@@ -12,7 +12,7 @@ const ServiceProviderRewards = ({account, translations, setAccount}) => {
 
 	useEffect(() => {
 		(async () => {
-			if (!!addressOrHerotag) {
+			if (!!addressOrHerotag && !account) {
 				try {
 					setLoading(true);
 					const { data: account } = await getAccount(addressOrHerotag);
@@ -26,6 +26,21 @@ const ServiceProviderRewards = ({account, translations, setAccount}) => {
 			}
 		})()
 	}, [addressOrHerotag])
+
+	useEffect(() => {
+
+		(async () => {
+			if (!!account) { 
+				const { data: providers } = await getProviders(account.address);
+				console.log('providers', providers);
+				providers.forEach(async provider => {
+					const { data: infos } = await getProviderInfos(provider.contract);
+					console.log('infos', infos);
+				})
+			}
+		})()
+
+	}, [account])
 
 	
 

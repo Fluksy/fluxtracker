@@ -1,6 +1,6 @@
 import { app_theme, SET_ACCOUNT, SET_THEME } from "./actions";
 
-export const account = (state = {}, action) => {
+export const account = (state = null, action) => {
 	switch (action.type) {
 		case SET_ACCOUNT:
 			return action.account

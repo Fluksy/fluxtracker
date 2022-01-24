@@ -8,7 +8,7 @@ import { Navigate } from 'react-router-dom';
 import { getAccount } from '../../config/api.elrond';
 import { toast } from 'react-toastify';
 
-const Search = ({translations}) => {
+const Search = ({translations, setAccount}) => {
 	const inputHeight = 48;
 	const elrondLogoFontSize = 24;
 	const [value, setValue] = useState('')
