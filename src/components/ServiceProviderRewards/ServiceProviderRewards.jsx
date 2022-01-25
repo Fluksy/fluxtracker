@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { getAccount, getProviders, getProviderInfos } from '../../config/api.elrond';
+import { getAccount } from '../../config/api.elrond';
+import { getProviders, getProviderInfos } from '../../config/api.fluxtracker';
 import { toast } from 'react-toastify';
 import { setAccount } from '../../store/actions';
 import { Navigate, useParams } from 'react-router-dom';
