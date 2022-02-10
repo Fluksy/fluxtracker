@@ -10,10 +10,10 @@ import { KEY_LANGUAGE_LOCAL_STORAGE } from '../../locales'
 const Header = ({ setLocale, locale }) => {
 	return <div className="Header sticky-top">
 		<nav className="navbar align-items-stretch flex-nowrap px-0">
-			<div className="d-flex align-items-center ms-0 ms-sm-5">
+			<div className="d-flex align-items-center ms-3 ms-sm-5">
 				<Link to='/search' className="d-flex rounded p-1 align-items-center navbar-brand maiar-shadow">
 					<ElrondLogo />
-					<span className="text-secondary text-truncate">Fluxtracker</span>
+					<span className="ps-sm-3 text-secondary text-truncate">Fluxtracker</span>
 				</Link>
 			</div>
 			<div className="d-flex align-items-center pe-4">
