@@ -13,7 +13,7 @@ const Header = ({ setLocale, locale }) => {
 			<div className="d-flex align-items-center ms-3 ms-sm-5">
 				<Link to='/search' className="d-flex rounded p-1 align-items-center navbar-brand maiar-shadow">
 					<ElrondLogo />
-					<span className="ps-sm-3 text-secondary text-truncate">Fluxtracker</span>
+					<span className="p-0 ps-sm-3 text-secondary text-truncate">Fluxtracker</span>
 				</Link>
 			</div>
 			<div className="d-flex align-items-center pe-4">
