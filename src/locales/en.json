@@ -6,5 +6,6 @@
     "when_should_i_restake" : "When should I restake my EGLD?",
     "write_here_your_egld_address_or_herotag" : "Write here your EGLD address or your herotag",
     "track_my_rewards": "track my rewards",
-    "bad_address_or_herotag": "Bad address or herotag"
+    "bad_address_or_herotag": "Bad address or herotag",
+    "no_staking_providers_found": "No staking providers found"
 }
