@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { getAccount } from '../../config/api.elrond';
-import { getProviders, getProviderInfos } from '../../config/api.fluxtracker';
+import { getProviders } from '../../config/api.fluxtracker';
 import { toast } from 'react-toastify';
-import { setAccount } from '../../store/actions';
+import { setAccount, setProviders } from '../../store/actions';
 import { Navigate, useParams } from 'react-router-dom';
+import { ServiceProviderCard } from "../";
 
-const ServiceProviderRewards = ({account, translations, setAccount}) => {
+const ServiceProviderRewards = ({account, providers, translations, setAccount, setProviders}) => {
 	const [needRedirect, setNeedRedirect] = useState(false)
 	const { addressOrHerotag } = useParams();
-	const [loading, setLoading] = useState();
-
+	const [loading, setLoading] = useState(false);
+	
 	useEffect(() => {
 		(async () => {
-			if (!!addressOrHerotag && !account) {
+			if (!!addressOrHerotag) {
 				try {
 					setLoading(true);
 					const { data: account } = await getAccount(addressOrHerotag);
 					setAccount(account);
-					setLoading(false);
 				} catch (error) {
 					toast.error(translations?.bad_address_or_herotag, {theme: 'dark', position: toast.POSITION.BOTTOM_RIGHT})
 					setNeedRedirect(true);
@@ -26,31 +26,41 @@ const ServiceProviderRewards = ({account, translations, setAccount}) => {
 				}
 			}
 		})()
-	}, [addressOrHerotag])
+	}, [addressOrHerotag, translations?.bad_address_or_herotag, setAccount])
 
 	useEffect(() => {
 
 		(async () => {
 			if (!!account) { 
-				const { data: providers } = await getProviders(account.address);
-				console.log('providers', providers);
-				providers.forEach(async provider => {
-					const { data: infos } = await getProviderInfos(provider.contract);
-					console.log('infos', infos);
-				})
+				const { data: providers } = await getProviders(account?.address);
+				setProviders(providers);
+				setLoading(false);
 			}
 		})()
 
-	}, [account])
-
+	}, [account, setProviders])
 	
-
-	return <div>
+	return <>
 		{needRedirect && <Navigate to={'/search'}/>}
-		{loading ? <div>loading... </div> : <div>herotag : {account?.username}</div>}
-	</div>
+		{ loading && <div className="d-flex justify-content-center text-center">
+			<img src="https://i.gifer.com/9gu9.gif" alt="loading" />
+		</div>}
+		{ !loading && providers?.length > 0 && <div className="d-flex flex-column justify-content-center align-items-center" style={{gap:'1.5rem'}}>
+			{ providers.map(provider => {
+				return <ServiceProviderCard key={provider.contract} {...provider}/>
+			})}
+		</div> }
+		{ providers?.length === 0 && !loading && <h1 className="text-center p-5">{translations?.no_staking_providers_found}</h1>}
+	</>
 }
 
-const mapStateToProps = ({i18n, account}) => ({ translations: i18n?.translations[i18n.locale], account});
-const mapDispatchToProps = dispatch => ({setAccount : account => {dispatch(setAccount(account))}})
+const mapStateToProps = ({i18n, account, providers}) => ({ 
+	translations: i18n?.translations[i18n.locale],
+	account,
+	providers
+});
+const mapDispatchToProps = dispatch => ({
+	setAccount : account => {dispatch(setAccount(account))},
+	setProviders : providers => {dispatch(setProviders(providers))}
+})
 export default connect(mapStateToProps, mapDispatchToProps)(ServiceProviderRewards)

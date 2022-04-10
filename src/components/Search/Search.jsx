@@ -1,19 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './Search.scss';
 import { SimpleElrondLogo} from '../CustomIcons/ElrondLogo/ElrondLogo'
 import { FaSearch } from 'react-icons/fa';
-import { setAccount } from '../../store/actions';
+import { setAccount, setProviders } from '../../store/actions';
 import { Navigate } from 'react-router-dom';
 import { getAccount } from '../../config/api.elrond';
 import { toast } from 'react-toastify';
 
-const Search = ({translations, setAccount}) => {
+const Search = ({translations, setAccount, setProviders}) => {
 	const inputHeight = 48;
 	const elrondLogoFontSize = 24;
 	const [value, setValue] = useState('')
 	const [loading, setLoading] = useState(false)
 	const [redirect, setRedirect] = useState(false)
+
+	useEffect(() => {
+		setAccount(null);
+		setProviders([]);
+	} , [setAccount, setProviders])
 	
 	const handleKeyDown = ({keyCode}) => {
 		if (keyCode === 13)
@@ -46,7 +51,7 @@ const Search = ({translations, setAccount}) => {
 				<div className='d-flex flex-column flex-lg-row' style={{gap: '1em'}}>
 					<div className='form flex-grow-1'>
 						<div className="form-group">
-							<input onKeyDown={handleKeyDown} value={value} onChange={({target : { value }}) => setValue(value)} type="text" name="egld address" className="form-style maiar-shadow" placeholder={translations?.write_here_your_egld_address_or_herotag} autoComplete="off" />
+							<input onKeyDown={handleKeyDown} value={value} onChange={({target : { value }}) => setValue(value)} type="text" name="egld address" className="form-style maiar-shadow text-truncate" placeholder={translations?.write_here_your_egld_address_or_herotag} autoComplete="off" />
 							<SimpleElrondLogo
 								style={{
 									'position': 'absolute',
@@ -69,5 +74,8 @@ const Search = ({translations, setAccount}) => {
 }
 
 const mapStateToProps = ({i18n, account}) => ({ translations: i18n?.translations[i18n.locale], account});
-const mapDispatchToProps = dispatch => ({setAccount : account => {dispatch(setAccount(account))}})
+const mapDispatchToProps = dispatch => ({
+	setAccount : account => {dispatch(setAccount(account))},
+	setProviders : account => {dispatch(setProviders(account))}
+});
 export default connect(mapStateToProps, mapDispatchToProps)(Search)

@@ -9,7 +9,7 @@ function App() {
   return <Router>
 		<div className='App d-flex flex-column min-vh-100' theme={'dark'}>
 			<Header />
-			<div className="main-content flex-grow-1 container">
+			<div className="main-content flex-grow-1 container my-4">
 				<Routes>
 					<Route path='/search' exact element={<Search/>}></Route>
 					<Route path='/rewards/:addressOrHerotag' exact element={<ServiceProviderRewards/>}></Route>

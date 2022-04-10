@@ -1,0 +1,36 @@
+.border-card {
+    border: 1px solid #4e5052 !important;
+}
+
+.bg-card {
+    background-color: var(--bg-color--header);
+}
+
+.custom-card {
+    background-color: var(--bg-color--header);
+    width: min(100%, 500px);	
+    box-shadow: 0px 0px 5px 0px rgba(36,37,38, 1);
+
+}
+
+.card-header {
+    border-bottom: 0;
+    background-color: inherit;
+
+    img {
+        width: 5em;
+        height: auto;
+        border-radius: 100%;
+        border: 1px solid #4e5052;
+        padding: .2em;
+    }
+
+    .card-title, h5 {
+        margin-bottom: 0;
+    }
+}
+
+.card-footer {
+    border-top: 0;
+    background-color: inherit;
+}
