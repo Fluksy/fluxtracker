@@ -11,7 +11,7 @@ const Header = ({ setLocale, locale }) => {
 	return <div className="Header sticky-top">
 		<nav className="navbar align-items-stretch flex-nowrap px-0">
 			<div className="d-flex align-items-center ms-3 ms-sm-5">
-				<Link to='/search' className="d-flex rounded p-1 align-items-center navbar-brand maiar-shadow">
+				<Link to='/search' className="d-flex rounded p-2 align-items-center navbar-brand maiar-shadow">
 					<ElrondLogo />
 					<span className="p-0 ps-sm-3 text-secondary text-truncate">Fluxtracker</span>
 				</Link>
