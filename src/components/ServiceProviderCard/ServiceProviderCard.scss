@@ -10,6 +10,7 @@
     background-color: var(--bg-color--header);
     width: min(100%, 500px);	
     box-shadow: 0px 0px 30px 0px rgba(36,37,38, 1);
+    place-self: center;
 
 }
 
@@ -45,7 +46,10 @@ a {
     color: var(--primary-color);
     border-radius: 4px;
 
-    // :focus, :hover {
-    //     color: white;
-    // }
+    &:focus, &:hover {
+        color: var(--success-color) !important;
+        transition: color .2s ease-in-out;
+    }
+
+
 }

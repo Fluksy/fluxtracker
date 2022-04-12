@@ -45,7 +45,7 @@ const ServiceProviderRewards = ({account, providers, translations, setAccount, s
 		{ loading && <div className="d-flex justify-content-center text-center">
 			<img src="https://i.gifer.com/9gu9.gif" alt="loading" />
 		</div>}
-		{ !loading && providers?.length > 0 && <div className="d-flex flex-column justify-content-center align-items-center" style={{gap:'1.5rem'}}>
+		{ !loading && providers?.length > 0 && <div className="d-grid" style={{gap:'1rem'}}>
 			{ providers.map(provider => {
 				return <ServiceProviderCard key={provider.contract} {...provider}/>
 			})}
