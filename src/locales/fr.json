@@ -7,5 +7,9 @@
     "write_here_your_egld_address_or_herotag" : "Écrivez ici votre adresse EGLD ou votre herotag",
     "track_my_rewards": "Suivre l'évolution de mes récompenses",
     "bad_address_or_herotag": "Mauvaise adresse ou herotag",
-    "no_staking_providers_found": "Aucun fournisseur de staking trouvé"
+    "no_staking_providers_found": "Aucun fournisseur de staking trouvé",
+    "node_count": "Nombre de noeuds",
+    "apr": "APR (Taux rendement annuel)",
+    "website": "Site web",
+    "featured": "Vérifié"
 }

@@ -7,5 +7,9 @@
     "write_here_your_egld_address_or_herotag" : "Write here your EGLD address or your herotag",
     "track_my_rewards": "track my rewards",
     "bad_address_or_herotag": "Bad address or herotag",
-    "no_staking_providers_found": "No staking providers found"
+    "no_staking_providers_found": "No staking providers found",
+    "node_count": "Node count",
+    "apr": "APR (Annual Percentage Rate)",
+    "website": "Website",
+    "featured": "Featured"
 }
