@@ -28,13 +28,13 @@ const ServiceProviderCard = (props) => {
 			{loading && !provider ?
 				<div>Loading...</div> :
 				<>
-					<ReactTooltip clickable={true} />	
+					<ReactTooltip clickable={true} border />	
 					<CardHeader className="d-flex align-items-center">
 						<CardImg src={provider?.identity?.avatar}></CardImg>
 						<CardTitle className="flex-grow-1 text-center">
 							<span>{provider?.identity?.name}</span>
 						</CardTitle>
-						{!!provider?.featured && <div data-tip={`Verified`} className="p-2 d-flex"><GoVerified size={LOGO_FONT_SIZE} /></div>}
+						{!!provider?.featured && <div data-tip={`Verified`} className="p-2 d-flex"><GoVerified className='primary-color' size={LOGO_FONT_SIZE} /></div>}
 					</CardHeader>
 					<CardBody>
 						<CardText>{provider?.identity.description}</CardText>
@@ -44,13 +44,13 @@ const ServiceProviderCard = (props) => {
 							{!!provider?.numNodes && 
 								<div data-tip={`Node count`} className="d-flex align-items-center" style={{gap: '.3em'}}>
 									<span>{`${provider?.numNodes}`}</span>
-									<FaServer size={LOGO_FONT_SIZE}/>
+									<FaServer className='primary-color' size={LOGO_FONT_SIZE}/>
 								</div>
 							}
 							{!!provider?.apr && 
 								<div data-tip={`APR: ${provider?.apr} %`} className="d-flex align-items-center" style={{gap: '.3em'}}>
 									<span>{`${provider?.apr}`}</span>
-									<FaPercent size={LOGO_FONT_SIZE}/>
+									<FaPercent className='primary-color' size={LOGO_FONT_SIZE}/>
 								</div>
 							}
 						</div>
