@@ -6,6 +6,7 @@ import { getProviderInfos } from "../../config/api.fluxtracker";
 import ReactTooltip from 'react-tooltip';
 import './ServiceProviderCard.scss';
 import { connect } from "react-redux";
+import { Loader } from '../index';
 
 const LOGO_FONT_SIZE = 22;
 
@@ -27,7 +28,7 @@ const ServiceProviderCard = ({contract, translations}) => {
 	return (
 		<Card className="custom-card card border-card place-self-center">
 			{loading && !provider ?
-				<div>Loading...</div> :
+				<Loader /> :
 				<>
 					<ReactTooltip clickable={true} border />	
 					<CardHeader className="d-flex align-items-center">

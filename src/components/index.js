@@ -6,3 +6,4 @@ export { ElrondLogo } from './CustomIcons/ElrondLogo/ElrondLogo';
 export { HeartIcon } from './CustomIcons/HeartIcon/HeartIcon';
 
 export { default as ServiceProviderCard } from './ServiceProviderCard/ServiceProviderCard';
+export { default as Loader } from './Loader/Loader';

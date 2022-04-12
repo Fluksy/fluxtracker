@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { setAccount, setProviders } from '../../store/actions';
 import { Navigate, useParams } from 'react-router-dom';
 import { ServiceProviderCard } from "../";
+import { Loader } from '../index';
 
 const ServiceProviderRewards = ({account, providers, translations, setAccount, setProviders}) => {
 	const [needRedirect, setNeedRedirect] = useState(false)
@@ -42,9 +43,7 @@ const ServiceProviderRewards = ({account, providers, translations, setAccount, s
 	
 	return <>
 		{needRedirect && <Navigate to={'/search'}/>}
-		{ loading && <div className="d-flex justify-content-center text-center">
-			<img src="https://i.gifer.com/9gu9.gif" alt="loading" />
-		</div>}
+		{ loading && <Loader />}
 		{ !loading && providers?.length > 0 && <div className="d-grid" style={{gap:'1rem'}}>
 			{ providers.map(provider => {
 				return <ServiceProviderCard key={provider.contract} {...provider}/>
