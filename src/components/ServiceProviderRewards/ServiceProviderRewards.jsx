@@ -44,7 +44,7 @@ const ServiceProviderRewards = ({account, providers, translations, setAccount, s
 	return <>
 		{needRedirect && <Navigate to={'/search'}/>}
 		{ loading && <Loader />}
-		{ !loading && providers?.length > 0 && <div className="d-grid" style={{gap:'1rem'}}>
+		{ !loading && providers?.length > 0 && <div className="d-grid" style={{gap:'1.5rem'}}>
 			{ providers.map(provider => {
 				return <ServiceProviderCard key={provider.contract} {...provider}/>
 			})}

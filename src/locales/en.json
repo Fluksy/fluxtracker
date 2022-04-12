@@ -11,5 +11,6 @@
     "node_count": "Node count",
     "apr": "APR (Annual Percentage Rate)",
     "website": "Website",
-    "featured": "Featured"
+    "featured": "Featured",
+    "staking_user_count": "Number of users using this staking provider"
 }

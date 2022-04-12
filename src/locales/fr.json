@@ -11,5 +11,6 @@
     "node_count": "Nombre de noeuds",
     "apr": "APR (Taux rendement annuel)",
     "website": "Site web",
-    "featured": "Vérifié"
+    "featured": "Vérifié",
+    "staking_user_count": "Nombre d'utilisateurs qui utilise ce fournisseur de \"staking\""
 }
