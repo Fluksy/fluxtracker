@@ -9,8 +9,7 @@ import './ServiceProviderCard.scss';
 import { connect } from "react-redux";
 import { Loader } from '../index';
 import { convertToReadableEgldAmount } from "../../utils/converter";
-
-const LOGO_FONT_SIZE = 22;
+import { LOGO_FONT_SIZE } from "../../config/constants";
 
 const ServiceProviderCard = ({contract, translations, claimableRewards, userActiveStake, userUnBondable}) => {
 

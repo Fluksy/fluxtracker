@@ -10,6 +10,7 @@ import { getAccount } from '../../config/api.elrond';
 import { toast } from 'react-toastify';
 import { Button, Card } from 'react-bootstrap';
 import { CardFooter, CardHeader, CardTitle } from 'reactstrap';
+import { LOGO_FONT_SIZE } from '../../config/constants';
 
 const Search = ({translations, setAccount, setProviders, searchHistory, addToSearchHistory, removeFromSearchHistory}) => {
 	const inputHeight = 48;
@@ -82,16 +83,16 @@ const Search = ({translations, setAccount, setProviders, searchHistory, addToSea
 										<NavLink to={`/rewards/${search}`}  key={index} className='text-center'>
 											{index === searchHistory.length-1 ? 
 												<CardFooter className='d-flex justify-content-center align-items-center'>
-													<CardTitle>{search}</CardTitle>
+													<CardTitle style={{ wordBreak: 'break-word' }}>{search}</CardTitle>
 												</CardFooter> :
 												<CardHeader className='d-flex justify-content-center align-items-center'>
-													<CardTitle>{search}</CardTitle>
+													<CardTitle style={{ wordBreak: 'break-word' }}>{search}</CardTitle>
 												</CardHeader>
 											}
 										</NavLink>
-										{index === searchHistory.length-1 ?
-											<CardFooter className='d-flex justify-content-center align-items-center'><Button onClick={() => removeFromSearchHistory(search)} className='p-1 remove'><AiFillCloseCircle /></Button></CardFooter> :
-											<CardHeader className='d-flex justify-content-center align-items-center'><Button onClick={() => removeFromSearchHistory(search)} className='p-1 remove'><AiFillCloseCircle /></Button></CardHeader>}
+										{index === searchHistory.length-1?
+											<CardFooter className='d-flex justify-content-center align-items-center'><Button onClick={() => removeFromSearchHistory(search)} className='p-2 remove'><AiFillCloseCircle size={LOGO_FONT_SIZE}/></Button></CardFooter> :
+											<CardHeader className='d-flex justify-content-center align-items-center'><Button onClick={() => removeFromSearchHistory(search)} className='p-2 remove'><AiFillCloseCircle size={LOGO_FONT_SIZE}/></Button></CardHeader>}
 									</div>
 							})}
 						</Card>
