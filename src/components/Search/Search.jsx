@@ -50,7 +50,7 @@ const Search = ({translations, setAccount, setProviders, searchHistory, addToSea
 		{ !!redirect ?
 			<Navigate to={`/rewards/${value}`}/> :
 			<div className='d-flex flex-column flex-grow-1 my-5'>
-				<div className='text-center my-5'>
+				<div className='text-center my-3'>
 					<h2 className='mb-0'>{translations?.when_should_i_restake}</h2>
 				</div>
 				<div className='d-flex flex-column flex-lg-row my-5' style={{gap: '1em'}}>
