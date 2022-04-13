@@ -1,6 +1,8 @@
 export const SET_ACCOUNT = 'set egld account';
 export const SET_THEME = 'set theme';
 export const SET_PROVIDERS = 'set providers';
+export const ADD_TO_SEARCH_HISTORY = 'add to search history';
+export const REMOVE_FROM_SEARCH_HISTORY = 'remove from search history';
 
 export const app_theme = {
 	DARK_THEME: 'dark',
@@ -25,5 +27,19 @@ export const setProviders = (providers) => {
 	return {
 		type: SET_PROVIDERS,
 		providers
+	}
+}
+
+export const addToSearchHistory = (search) => {
+	return {
+		type: ADD_TO_SEARCH_HISTORY,
+		search
+	}
+}
+
+export const removeFromSearchHistory = (search) => {
+	return {
+		type: REMOVE_FROM_SEARCH_HISTORY,
+		search
 	}
 }

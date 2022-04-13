@@ -12,5 +12,6 @@
     "apr": "APR (Taux rendement annuel)",
     "website": "Site web",
     "featured": "Vérifié",
-    "staking_user_count": "Nombre d'utilisateurs qui utilise ce fournisseur de \"staking\""
+    "staking_user_count": "Nombre d'utilisateurs qui utilise ce fournisseur de \"staking\"",
+    "recent_searches": "Recherches récentes"
 }

@@ -133,4 +133,15 @@
 	display: block;
 }
 
+button.remove {
+  height: auto;
+  width: auto;
+  color: var(--toastify-color-error);
+  background-color: transparent;
+  border-radius: 100%;
 
+  &:focus, &:hover {
+    background-color: transparent;
+    color: var(--toastify-color-error);
+  }  
+}

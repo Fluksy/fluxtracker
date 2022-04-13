@@ -12,5 +12,6 @@
     "apr": "APR (Annual Percentage Rate)",
     "website": "Website",
     "featured": "Featured",
-    "staking_user_count": "Number of users using this staking provider"
+    "staking_user_count": "Number of users using this staking provider",
+    "recent_searches": "Recent research"
 }

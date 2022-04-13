@@ -8,6 +8,7 @@ import ReactTooltip from 'react-tooltip';
 import './ServiceProviderCard.scss';
 import { connect } from "react-redux";
 import { Loader } from '../index';
+import { convertToReadableEgldAmount } from "../../utils/converter";
 
 const LOGO_FONT_SIZE = 22;
 
@@ -63,11 +64,11 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 					</CardHeader>
 					<CardBody>
 						<CardText>{provider?.identity.description}</CardText>
-						<CardText>{`Claimable rewards : ${claimableRewards / 1000000000000000000} EGLD`}</CardText>
-						<CardText>{`userActiveStake : ${userActiveStake / 1000000000000000000}`}</CardText>
-						<CardText>{`userUnBondable : ${userUnBondable / 1000000000000000000}`}</CardText>
-						<CardText>{`Every  ${numberOfdays(fees, apr, period, stakedTokens / 1000000000000000000)} days`}</CardText>
-						<CardText>{`wait  ${amountBeforeClaim(stakedTokens / 1000000000000000000, apr, numberOfdays(fees, apr, period, stakedTokens / 1000000000000000000))} before claim.`}</CardText>
+						<CardText>{`Claimable rewards : ${convertToReadableEgldAmount(claimableRewards)} EGLD`}</CardText>
+						<CardText>{`userActiveStake : ${convertToReadableEgldAmount(userActiveStake)}`}</CardText>
+						<CardText>{`userUnBondable : ${convertToReadableEgldAmount(userUnBondable)}`}</CardText>
+						<CardText>{`Every  ${numberOfdays(fees, apr, period, convertToReadableEgldAmount(stakedTokens))} days`}</CardText>
+						<CardText>{`wait  ${convertToReadableEgldAmount(amountBeforeClaim(stakedTokens, apr, numberOfdays(fees, apr, period, convertToReadableEgldAmount(stakedTokens))))} before claim.`}</CardText>
 					</CardBody>
 					<CardFooter className="d-flex align-items-center justify-content-between flex-wrap" style={{gap: '.5em'}}>
 						<div className="d-flex align-items-center" style={{gap: '.5em'}}>
