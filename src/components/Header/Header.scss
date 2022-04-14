@@ -1,51 +1,9 @@
-.Header {
-
+.bg-navbar {
     background: var(--bg-color--header);
     border-bottom: 1px solid #4e5052 !important;
     color: white;
-
-    .navbar {
-        height: 3.75rem;
-
-        span {
-
-            font-size: 1.2rem;
-            font-weight: 300;
-            padding-left: 0.7rem;
-
-        }
-
-        @media (min-width: 576px) {
-    
-            span.text-secondary {
-                border-left: 1px solid var(--text-secondary);
-            }
-
-        }
-
-        div[class^="ReactFlagsSelect"] {
-            padding-bottom: 0;
-
-            [role='listbox'] {
-                background-color: var(--bg-color-main-content);
-                margin-top: 10px;
-    
-                span[class^='ReactFlagsSelect-module_selectFlag'] {
-                    padding-left: 0;
-                }
-            }
-        }
-        
-    }
-
-    .text-secondary {
-        color: var(--text-secondary) !important;
-    }
-
-    svg {
-        color: var(--text-secondary);
-        cursor: pointer;
-    }
 }
 
-
+.navbar-toggler-icon {
+    filter: invert(0.5);
+}
