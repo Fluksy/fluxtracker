@@ -13,5 +13,11 @@
     "website": "Site web",
     "featured": "Vérifié",
     "staking_user_count": "Nombre d'utilisateurs qui utilise ce fournisseur de \"staking\"",
-    "recent_searches": "Recherches récentes"
+    "recent_searches": "Recherches récentes",
+    "claimable_rewards": "Récompenses récupérables",
+    "staked_amount": "Montant staké",
+    "amount_locked_before_withdrawal": "Montant verrouillé avant le retrait",
+    "estimated_days": "Une moyenne de {days} jours entre deux restakes",
+    "amount_to_wait_for_next_restake": "Attendre {amount} avant de restake (manque {left_amount})",
+    "amount_to_wait_explained": "Il est préférable d'attendre le montant plutôt que le nombre de jours, car les récompenses ne sont pas régulières"	
 }

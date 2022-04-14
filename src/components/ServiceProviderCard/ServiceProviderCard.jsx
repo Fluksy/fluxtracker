@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { Loader } from '../index';
 import { convertToReadableEgldAmount } from "../../utils/converter";
 import { LOGO_FONT_SIZE } from "../../config/constants";
+import { SimpleElrondLogo } from '../CustomIcons/ElrondLogo/ElrondLogo';
 
 const ServiceProviderCard = ({contract, translations, claimableRewards, userActiveStake, userUnBondable}) => {
 
@@ -61,13 +62,32 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 						</CardTitle>
 						{!!provider?.featured && <div data-tip={translations?.featured} className="p-2 d-flex"><GoVerified className='primary-color' size={LOGO_FONT_SIZE} /></div>}
 					</CardHeader>
-					<CardBody>
-						<CardText>{provider?.identity.description}</CardText>
-						<CardText>{`Claimable rewards : ${convertToReadableEgldAmount(claimableRewards)} EGLD`}</CardText>
-						<CardText>{`userActiveStake : ${convertToReadableEgldAmount(userActiveStake)}`}</CardText>
-						<CardText>{`userUnBondable : ${convertToReadableEgldAmount(userUnBondable)}`}</CardText>
-						<CardText>{`Every  ${numberOfdays(fees, apr, period, convertToReadableEgldAmount(stakedTokens))} days`}</CardText>
-						<CardText>{`wait  ${convertToReadableEgldAmount(amountBeforeClaim(stakedTokens, apr, numberOfdays(fees, apr, period, convertToReadableEgldAmount(stakedTokens))))} before claim.`}</CardText>
+					<CardBody className="text-center">
+						<CardText className="d-flex align-items-center justify-content-center" style={{gap: '.5em'}}>
+							<span className="font-weight-bold">{`${translations?.staked_amount} : `} <strong>{convertToReadableEgldAmount(userActiveStake, 2).toLocaleString()}</strong> </span>
+							<SimpleElrondLogo
+								style={{
+									height: `1em`,
+									fill: 'white',
+									WebkitTransition: 'all 200ms linear',
+									transition: 'all 200ms linear'
+								}}
+							/>
+						</CardText>
+						<CardText className="d-flex align-items-center justify-content-center" style={{gap: '.5em'}}>
+							<span>{`${translations?.claimable_rewards} : `} <strong>{convertToReadableEgldAmount(claimableRewards)}</strong> </span>
+							<SimpleElrondLogo
+								style={{
+									height: `1em`,
+									fill: 'white',
+									WebkitTransition: 'all 200ms linear',
+									transition: 'all 200ms linear'
+								}}
+							/>
+						</CardText>
+						<CardText>{`${translations?.estimated_days.replace('{days}', numberOfdays(fees, apr, period, convertToReadableEgldAmount(stakedTokens)))}`}</CardText>
+						<CardText data-tip={translations?.amount_to_wait_explained}>
+							{`${translations?.amount_to_wait_for_next_restake.replace('{amount}', convertToReadableEgldAmount(amountBeforeClaim(stakedTokens, apr, numberOfdays(fees, apr, period, convertToReadableEgldAmount(stakedTokens))))).replace('{left_amount}', convertToReadableEgldAmount(amountBeforeClaim(stakedTokens, apr, numberOfdays(fees, apr, period, convertToReadableEgldAmount(stakedTokens)))-claimableRewards))}`}</CardText>
 					</CardBody>
 					<CardFooter className="d-flex align-items-center justify-content-between flex-wrap" style={{gap: '.5em'}}>
 						<div className="d-flex align-items-center" style={{gap: '.5em'}}>

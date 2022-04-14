@@ -13,5 +13,11 @@
     "website": "Website",
     "featured": "Featured",
     "staking_user_count": "Number of users using this staking provider",
-    "recent_searches": "Recent research"
+    "recent_searches": "Recent research",
+    "claimable_rewards": "Claimable rewards",
+    "staked_amount": "Staked amount",
+    "amount_locked_before_withdrawal": "Amount locked before withdrawal",
+    "estimated_days": "An average of {days} days between two restakes",
+    "amount_to_wait_for_next_restake": "Wait for {amount} before restake (missing {left_amount})",
+    "amount_to_wait_explained": "It's better to wait for the amount rather than the number of days, as the rewards are not regular"
 }
