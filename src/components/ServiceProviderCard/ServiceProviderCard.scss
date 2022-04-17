@@ -1,5 +1,5 @@
 .border-card {
-    border: 1px solid #4e5052 !important;
+    border: 1px solid #4e5052;
 }
 
 .bg-card {
@@ -15,8 +15,10 @@
 }
 
 .card-header {
-    border-bottom: 1px solid #4e5052 !important;
+    border-bottom: 1px solid #4e5052;
     background-color: inherit;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 
     img {
         width: 4em;
@@ -56,4 +58,41 @@ a {
 
 .primary-color {
     color: var(--primary-color);
+}
+
+
+.can-claim-egld {
+    animation: shadowGrowing 1.2s forwards infinite;
+    
+    .card-header, img {
+        animation: borderColor 1.2s forwards infinite;
+    }
+    
+}
+
+@keyframes shadowGrowing {
+    0% {
+        box-shadow: 0px 0px 0px 0px var(--primary-color);
+        border-color: #4e5052;
+    }
+    50% {
+        box-shadow: 0px 0px 1em var(--primary-color);
+        border-color: var(--primary-color);
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px var(--primary-color);
+        border-color: #4e5052;
+    }
+}
+
+@keyframes borderColor {
+    0% {
+        border-color: #4e5052;
+    }
+    50% {
+        border-color: var(--primary-color);
+    }
+    100% {
+        border-color: #4e5052;
+    }
 }

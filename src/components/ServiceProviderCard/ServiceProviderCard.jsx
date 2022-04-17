@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { FaTwitter, FaGithub, FaLink, FaServer, FaUsers } from "react-icons/fa";
 import { RiPercentLine } from "react-icons/ri";
 import { GoVerified } from "react-icons/go";
@@ -33,24 +33,33 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 		fetchData();
 	}, [contract])
 
-	const numberOfdays = (fees, apr, stakingPeriodInDays, delegatedTokens) => {
+	const estimatedNumberOfDays = useMemo(() => {
+		const delegatedTokens = convertToReadableEgldAmount(stakedTokens);
 		if (delegatedTokens < 1) {
 			return 0;
 		}
 		const dailyReward = (apr/100) / 365;
-		return Math.round(Math.sqrt(fees * (stakingPeriodInDays * dailyReward + 2) / Math.pow(dailyReward, 2) / delegatedTokens));
-	}
+		return Math.round(Math.sqrt(fees * (period * dailyReward + 2) / Math.pow(dailyReward, 2) / delegatedTokens));
+	}, [fees, apr, period, stakedTokens])
 
-	const amountBeforeClaim = (delegatedTokens, apr, numberOfDay) => {
-		if (delegatedTokens < 1) {
-				return 0;
+	const amountBeforeClaim = useMemo(() => {
+		if (stakedTokens < 1) {
+			return 0;
 		}
-		const dailyReward = delegatedTokens * (apr/100) / 365;
-		return numberOfDay * dailyReward;
-	}
+		const dailyReward = stakedTokens * (apr/100) / 365;
+		return estimatedNumberOfDays * dailyReward;
+	}, [stakedTokens, apr, estimatedNumberOfDays])
+
+	const leftAmountToAccumulate = useMemo(() => {
+		if (claimableRewards >= amountBeforeClaim) {
+			return 0;
+		}
+	
+		return Number(amountBeforeClaim)-Number(claimableRewards);
+	}, [amountBeforeClaim,claimableRewards])
 
 	return (
-		<Card className="custom-card card border-card place-self-center">
+		<Card className={`custom-card card border-card place-self-center${leftAmountToAccumulate <= 0 ? " can-claim-egld" : ""}`}>
 			{loading && !provider ?
 				<Loader /> :
 				<>
@@ -85,9 +94,15 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 								}}
 							/>
 						</CardText>
-						<CardText>{`${translations?.estimated_days.replace('{days}', numberOfdays(fees, apr, period, convertToReadableEgldAmount(stakedTokens)))}`}</CardText>
-						<CardText data-tip={translations?.amount_to_wait_explained}>
-							{`${translations?.amount_to_wait_for_next_restake.replace('{amount}', convertToReadableEgldAmount(amountBeforeClaim(stakedTokens, apr, numberOfdays(fees, apr, period, convertToReadableEgldAmount(stakedTokens))))).replace('{left_amount}', convertToReadableEgldAmount(amountBeforeClaim(stakedTokens, apr, numberOfdays(fees, apr, period, convertToReadableEgldAmount(stakedTokens)))-claimableRewards))}`}</CardText>
+						<CardText>{`${translations?.estimated_days.replace('{days}', estimatedNumberOfDays)}`}</CardText>
+							{leftAmountToAccumulate !== 0 ? 
+								<CardText data-tip={translations?.amount_to_wait_explained}>
+									{`${translations?.amount_to_wait_for_next_restake_with_left_amount.replace('{amount}', convertToReadableEgldAmount(amountBeforeClaim)).replace('{left_amount}', convertToReadableEgldAmount(leftAmountToAccumulate))}`}
+								</CardText> :
+								<CardText data-tip={translations?.amount_to_wait_explained}>
+									<strong>{`${translations?.you_can_restake_your_staking_rewards}`}</strong>
+								</CardText>
+							}
 					</CardBody>
 					<CardFooter className="d-flex align-items-center justify-content-between flex-wrap" style={{gap: '.5em'}}>
 						<div className="d-flex align-items-center" style={{gap: '.5em'}}>
