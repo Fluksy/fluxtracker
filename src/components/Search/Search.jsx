@@ -108,6 +108,5 @@ const mapDispatchToProps = dispatch => ({
 	setProviders : providers => {dispatch(setProviders(providers))},
 	addToSearchHistory : search => {dispatch(addToSearchHistory(search))},
 	removeFromSearchHistory : search => {dispatch(removeFromSearchHistory(search))}
-
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Search)
