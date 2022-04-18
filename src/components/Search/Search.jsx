@@ -82,10 +82,10 @@ const Search = ({translations, setAccount, setProviders, searchHistory, addToSea
 									return <div key={search} className='d-grid' style={{ gridTemplateColumns: '9fr 1fr' }}>
 										<NavLink to={`/rewards/${search}`}  key={index} className='text-center'>
 											{index === searchHistory.length-1 ? 
-												<CardFooter className='d-flex justify-content-center align-items-center'>
+												<CardFooter className='d-flex justify-content-center align-items-center' style={{height: '100%'}}>
 													<CardTitle style={{ wordBreak: 'break-word' }}>{search}</CardTitle>
 												</CardFooter> :
-												<CardHeader className='d-flex justify-content-center align-items-center'>
+												<CardHeader className='d-flex justify-content-center align-items-center' style={{height: '100%'}}>
 													<CardTitle style={{ wordBreak: 'break-word' }}>{search}</CardTitle>
 												</CardHeader>
 											}
