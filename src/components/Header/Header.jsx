@@ -59,12 +59,11 @@ const Header = ({ setLocale, locale, egldPrice, translations}) => {
 						<hr />
 						<div className="support d-flex flex-column pe-3">
 							<span className='flex-wrap' style={{ wordBreak: 'break-word' }} >{translations?.if_you_want_to_support}</span>
-							<label className='flex-wrap align-self-center mt-3' style={{ wordBreak: 'break-word' }} ><span style={{color: '#EC4899'}}>@</span>fluxy</label>
+							<label className='flex-wrap align-self-center mt-3' style={{ wordBreak: 'break-word' }} ><span className='me-1' style={{color: '#EC4899'}}>@</span>fluxy</label>
 							<div className='d-flex justify-content-center align-items-center'>
 								<span className='flex-wrap mt-3 me-3' style={{ wordBreak: 'break-word' }}>erd16flffuf6nkqy8ywz3dguu0hm0hlza4mvrwqejtyd7euu2ja8xalqutan2g</span>
 								
 								<Button onClick={() => {
-									// copy to clipboard erd16flffuf6nkqy8ywz3dguu0hm0hlza4mvrwqejtyd7euu2ja8xalqutan2g
 									navigator.clipboard.writeText('erd16flffuf6nkqy8ywz3dguu0hm0hlza4mvrwqejtyd7euu2ja8xalqutan2g');	
 									toast.success(translations?.copied_to_clipboard, {theme: 'dark', position: toast.POSITION.BOTTOM_RIGHT})
 								}} className='p-2 copyClipboard'><FaClipboard size={LOGO_FONT_SIZE} /></Button>
