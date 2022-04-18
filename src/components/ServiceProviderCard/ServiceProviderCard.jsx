@@ -12,7 +12,7 @@ import { convertToReadableEgldAmount } from "../../utils/converter";
 import { LOGO_FONT_SIZE } from "../../config/constants";
 import { SimpleElrondLogo } from '../CustomIcons/ElrondLogo/ElrondLogo';
 
-const ServiceProviderCard = ({contract, translations, claimableRewards, userActiveStake, userUnBondable}) => {
+const ServiceProviderCard = ({contract, translations, claimableRewards, userActiveStake, userUnBondable, egldPrice}) => {
 
 	const [provider, setProvider] = useState();
 	const [loading, setLoading] = useState(false)
@@ -73,7 +73,7 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 					</CardHeader>
 					<CardBody className="text-center">
 						<CardText className="d-flex align-items-center justify-content-center" style={{gap: '.5em'}}>
-							<span className="font-weight-bold">{`${translations?.staked_amount} : `} <strong>{convertToReadableEgldAmount(userActiveStake, 2).toLocaleString()}</strong> </span>
+							<span className="font-weight-bold">{`${translations?.staked_amount} : `} <strong>{convertToReadableEgldAmount(userActiveStake, 2)}</strong></span>
 							<SimpleElrondLogo
 								style={{
 									height: `1em`,
@@ -82,6 +82,7 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 									transition: 'all 200ms linear'
 								}}
 							/>
+							<span>(<strong>{`${(egldPrice*convertToReadableEgldAmount(userActiveStake)).toFixed(2)}$`}</strong>)</span>
 						</CardText>
 						<CardText className="d-flex align-items-center justify-content-center" style={{gap: '.5em'}}>
 							<span>{`${translations?.claimable_rewards} : `} <strong>{convertToReadableEgldAmount(claimableRewards)}</strong> </span>
@@ -93,6 +94,7 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 									transition: 'all 200ms linear'
 								}}
 							/>
+							<span>(<strong>{`${(egldPrice*convertToReadableEgldAmount(claimableRewards)).toFixed(2)}$`}</strong>)</span>
 						</CardText>
 						<CardText>{`${translations?.estimated_days.replace('{days}', estimatedNumberOfDays)}`}</CardText>
 							{leftAmountToAccumulate !== 0 ? 
@@ -107,19 +109,19 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 					<CardFooter className="d-flex align-items-center justify-content-between flex-wrap" style={{gap: '.5em'}}>
 						<div className="d-flex align-items-center" style={{gap: '.5em'}}>
 							{!!provider?.apr && 
-								<div data-tip={translations?.apr} className="d-flex align-items-center" style={{gap: '.3em'}}>
+								<div data-tip={translations?.apr} className="d-flex align-items-end" style={{gap: '.3em'}}>
 									<span>{`${provider?.apr}`}</span>
 									<RiPercentLine className='primary-color' size={LOGO_FONT_SIZE}/>
 								</div>
 							}
 							{!!provider?.numUsers && 
-								<div data-tip={`${translations?.staking_user_count}`} className="d-flex align-items-center" style={{gap: '.3em'}}>
+								<div data-tip={`${translations?.staking_user_count}`} className="d-flex align-items-end" style={{gap: '.3em'}}>
 									<span>{`${provider?.numUsers}`}</span>
 									<FaUsers className='primary-color' size={LOGO_FONT_SIZE}/>
 								</div>
 							}
 							{!!provider?.numNodes && 
-								<div data-tip={`${translations?.node_count}`} className="d-flex align-items-center" style={{gap: '.3em'}}>
+								<div data-tip={`${translations?.node_count}`} className="d-flex align-items-end" style={{gap: '.3em'}}>
 									<span>{`${provider?.numNodes}`}</span>
 									<FaServer className='primary-color' size={LOGO_FONT_SIZE}/>
 								</div>
@@ -138,5 +140,5 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 	)
 }
 
-const mapStateToProps = ({i18n}) => ({ translations: i18n?.translations[i18n.locale] })
+const mapStateToProps = ({i18n, egldPrice}) => ({ translations: i18n?.translations[i18n.locale], egldPrice})
 export default connect(mapStateToProps)(ServiceProviderCard);

@@ -1,7 +1,7 @@
 {
     "made_with" : "Made with",
     "by" : "by",
-    "fluxy" : "@Fluxy",
+    "fluxy" : "@fluxy",
     "not_affiliated" : "Project not affiliated with Elrond",
     "when_should_i_restake" : "When should I restake my EGLD?",
     "write_here_your_egld_address_or_herotag" : "Write here your EGLD address or your herotag",
@@ -20,5 +20,8 @@
     "estimated_days": "An average of {days} days between two restakes",
     "amount_to_wait_for_next_restake_with_left_amount": "Wait for {amount} before restake (missing {left_amount})",
     "amount_to_wait_explained": "It's better to wait for the amount rather than the number of days, as the rewards are not regular",
-    "you_can_restake_your_staking_rewards": "You should restake your staking rewards"
+    "you_can_restake_your_staking_rewards": "You should restake your staking rewards",
+    "if_you_want_to_support": "If you want to support this tool, feel free to make a donation",
+    "copied_to_clipboard": "Copied to clipboard",
+    "thanks_for_your_support": "Thanks for your support"
 }

@@ -3,8 +3,19 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import './App.scss';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { connect } from 'react-redux';
+import { fetchEgldPrice } from './store/actions';
+import { useEffect } from 'react';
 
-function App() {
+function App({onFetchEgldPrice}) {
+
+	useEffect(() => {
+		onFetchEgldPrice();
+		const interval = setInterval(() => {
+			onFetchEgldPrice();
+		}, 30000);
+		return () => clearInterval(interval);
+	}, [onFetchEgldPrice])
 
   return <Router>
 		<div className='App d-flex flex-column min-vh-100' theme={'dark'}>
@@ -22,4 +33,5 @@ function App() {
 	</Router>
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({onFetchEgldPrice : () => dispatch(fetchEgldPrice())})
+export default connect(null, mapDispatchToProps)(App);

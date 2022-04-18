@@ -1,7 +1,7 @@
 {
     "made_with" : "Fait avec",
     "by" : "par",
-    "fluxy" : "@Fluxy",
+    "fluxy" : "@fluxy",
     "not_affiliated" : "Projet non affilié avec Elrond",
     "when_should_i_restake" : "Quand dois-je restake mes EGLD ?",
     "write_here_your_egld_address_or_herotag" : "Écrivez ici votre adresse EGLD ou votre herotag",
@@ -20,5 +20,8 @@
     "estimated_days": "Une moyenne de {days} jours entre deux restakes",
     "amount_to_wait_for_next_restake_with_left_amount": "Attendre {amount} avant de restake (manque {left_amount})",
     "amount_to_wait_explained": "Il est préférable d'attendre le montant plutôt que le nombre de jours, car les récompenses ne sont pas régulières",
-    "you_can_restake_your_staking_rewards": "Vous devriez restake vos récompenses de staking"
+    "you_can_restake_your_staking_rewards": "Vous devriez restake vos récompenses de staking",
+    "if_you_want_to_support": "Si vous voulez soutenir ce projet, libre à vous de faire une donation",
+    "copied_to_clipboard": "Copié dans le presse-papier",
+    "thanks_for_your_support": "Merci pour votre soutien"
 }

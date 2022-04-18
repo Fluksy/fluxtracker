@@ -1,4 +1,4 @@
-import { app_theme, SET_ACCOUNT, SET_THEME, SET_PROVIDERS, ADD_TO_SEARCH_HISTORY, REMOVE_FROM_SEARCH_HISTORY } from "./actions";
+import { app_theme, SET_ACCOUNT, SET_THEME, SET_PROVIDERS, ADD_TO_SEARCH_HISTORY, REMOVE_FROM_SEARCH_HISTORY, SET_EGLD_PRICE } from "./actions";
 
 export const account = (state = null, action) => {
 	switch (action.type) {
@@ -23,6 +23,15 @@ export const providers = (state = [], action) => {
 		case SET_PROVIDERS:
 			return action.providers;
 		
+		default:
+			return state;
+	}
+}
+
+export const egldPrice = (state = 0, action) => {
+	switch (action.type) {
+		case SET_EGLD_PRICE:
+			return action.egldPrice;
 		default:
 			return state;
 	}
