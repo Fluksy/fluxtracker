@@ -47,14 +47,14 @@ const Header = ({ setLocale, locale, egldPrice, translations}) => {
 				style={{backgroundColor: 'var(--bg-color--header)', color: 'var(--font-color-header)'}}
 				id="offcanvasNavbar"
 				aria-labelledby="offcanvasNavbarLabel"
-				placement="end"
-			>
+				placement="end">
 				<Offcanvas.Header closeButton>
 					<Offcanvas.Title id="offcanvasNavbarLabel">Fluxtracker</Offcanvas.Title>
 				</Offcanvas.Header>
 				<Offcanvas.Body>
 					<Nav className="justify-content-end flex-grow-1 pe-3">
 						<NavLink to="/search">{translations?.home}</NavLink>
+						<NavLink to="/mex-stats">Mex Stats</NavLink>
 						<p className='text-muted'>{translations?.more_coming_soon}</p>
 						<hr />
 						<div className="support d-flex flex-column pe-3">

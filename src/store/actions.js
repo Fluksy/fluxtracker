@@ -1,9 +1,12 @@
+import { getBurnedMexTokens } from "../config/api.fluxtracker";
+
 export const SET_ACCOUNT = 'set egld account';
 export const SET_THEME = 'set theme';
 export const SET_PROVIDERS = 'set providers';
 export const ADD_TO_SEARCH_HISTORY = 'add to search history';
 export const REMOVE_FROM_SEARCH_HISTORY = 'remove from search history';
 export const SET_EGLD_PRICE = 'set egld price';
+export const SET_BURNED_MEX_AMOUNT = 'set burned mex amount';
 
 export const app_theme = {
 	DARK_THEME: 'dark',
@@ -52,12 +55,28 @@ export const setEgldPrice = (egldPrice) => {
 	}
 }
 
+export const setBurnedMexAmount = (burnedMexAmount) => {
+	return {
+		type: SET_BURNED_MEX_AMOUNT,
+		burnedMexAmount
+	}
+}
+
 export const fetchEgldPrice = () => {
 	return (dispatch) => {
 		return fetch('https://data.elrond.com/latest/quoteshistorical/egld/price')
 			.then(response => response.json())
 			.then(price => {
 				dispatch(setEgldPrice(price))
+			})
+	}
+}
+
+export const fetchBurnedMexAmount = () => {
+	return (dispatch) => {
+		return getBurnedMexTokens()
+			.then(({data:{mex_burned_amount}}) => {
+				dispatch(setBurnedMexAmount(mex_burned_amount))
 			})
 	}
 }

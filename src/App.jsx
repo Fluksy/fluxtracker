@@ -1,13 +1,13 @@
-import { Search, Header, Footer, ServiceProviderRewards} from './components';
+import { Search, Header, Footer, ServiceProviderRewards, MexStatsView} from './components';
 import 'react-toastify/dist/ReactToastify.min.css';
 import './App.scss';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { connect } from 'react-redux';
-import { fetchEgldPrice } from './store/actions';
+import { fetchBurnedMexAmount, fetchEgldPrice } from './store/actions';
 import { useEffect } from 'react';
 
-function App({onFetchEgldPrice}) {
+function App({onFetchEgldPrice, onFetchBurnedMexAmount}) {
 
 	useEffect(() => {
 		onFetchEgldPrice();
@@ -17,6 +17,14 @@ function App({onFetchEgldPrice}) {
 		return () => clearInterval(interval);
 	}, [onFetchEgldPrice])
 
+	useEffect(() => {
+		onFetchBurnedMexAmount();
+		const interval = setInterval(() => {
+			onFetchBurnedMexAmount();
+		}, 10000);
+		return () => clearInterval(interval);
+	}, [onFetchBurnedMexAmount]);
+
   return <Router>
 		<div className='App d-flex flex-column min-vh-100' theme={'dark'}>
 			<Header />
@@ -24,6 +32,7 @@ function App({onFetchEgldPrice}) {
 				<Routes>
 					<Route path='/search' exact element={<Search/>}></Route>
 					<Route path='/rewards/:addressOrHerotag' exact element={<ServiceProviderRewards/>}></Route>
+					<Route path='/mex-stats' exact element={<MexStatsView/>}></Route>
 					<Route path='*' element={<Navigate to="/search" /> } />
 				</Routes>
 				<ToastContainer />
@@ -33,5 +42,5 @@ function App({onFetchEgldPrice}) {
 	</Router>
 }
 
-const mapDispatchToProps = dispatch => ({onFetchEgldPrice : () => dispatch(fetchEgldPrice())})
+const mapDispatchToProps = dispatch => ({onFetchEgldPrice : () => dispatch(fetchEgldPrice()), onFetchBurnedMexAmount: () => dispatch(fetchBurnedMexAmount())});
 export default connect(null, mapDispatchToProps)(App);
