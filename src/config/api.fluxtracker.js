@@ -11,3 +11,7 @@ export const getProviders = async(erd1Address) => {
 export const getProviderInfos = async(serviceProviderSmartContractAddress) => {
 	return fluxtrackerApi.get(`/providersInfos/${serviceProviderSmartContractAddress}`);
 }
+
+export const getBurnedMexTokens = async() => {
+	return fluxtrackerApi.get(`/burned-mex-amount`);
+}
