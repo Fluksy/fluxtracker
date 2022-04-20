@@ -24,7 +24,7 @@ const MexStatsView = ({translations, burnedMexAmount, mexEconomics}) => {
 		<hr />
 		<div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
 			<span className="text-center">{`${translations?.total_supply}`}</span>
-			<span className="text-muted text-center">{`${(parseInt(mexEconomics.totalSupply)).toLocaleString('en')}`}</span>
+			<span className="text-muted text-center">{`${(parseInt(mexEconomics.totalSupply)).toLocaleString('en')} (${(burnedMexAmount * 100 / mexEconomics.totalSupply).toFixed(2)} % 🔥)`}</span>
 		</div>
 		<hr />
 	</div>
