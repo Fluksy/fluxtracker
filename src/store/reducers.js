@@ -1,4 +1,4 @@
-import { app_theme, SET_ACCOUNT, SET_THEME, SET_PROVIDERS, ADD_TO_SEARCH_HISTORY, REMOVE_FROM_SEARCH_HISTORY, SET_EGLD_PRICE, SET_BURNED_MEX_AMOUNT } from "./actions";
+import { app_theme, SET_ACCOUNT, SET_THEME, SET_PROVIDERS, ADD_TO_SEARCH_HISTORY, REMOVE_FROM_SEARCH_HISTORY, SET_EGLD_PRICE, SET_BURNED_MEX_AMOUNT, SET_MEX_ECONOMICS } from "./actions";
 
 export const account = (state = null, action) => {
 	switch (action.type) {
@@ -63,6 +63,22 @@ export const searchHistory = (state = [], action) => {
 		
 		case REMOVE_FROM_SEARCH_HISTORY:
 			return state.filter(item => item !== action.search);
+		default:
+			return state;
+	}
+}
+
+export const mexEconomics = (state = {
+  totalSupply: 0,
+  circulatingSupply: 0,
+  price: 0,
+  marketCap: 0,
+  volume24h: 0,
+  marketPairs: 0
+}, action) => {
+	switch (action.type) {
+		case SET_MEX_ECONOMICS:
+			return action.mexEconomics;
 		default:
 			return state;
 	}

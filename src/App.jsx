@@ -4,10 +4,10 @@ import './App.scss';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { connect } from 'react-redux';
-import { fetchBurnedMexAmount, fetchEgldPrice } from './store/actions';
+import { fetchBurnedMexAmount, fetchEgldPrice, fetchMexEconomics } from './store/actions';
 import { useEffect } from 'react';
 
-function App({onFetchEgldPrice, onFetchBurnedMexAmount}) {
+function App({onFetchEgldPrice, onFetchBurnedMexAmount, onFetchMexEconomics}) {
 
 	useEffect(() => {
 		onFetchEgldPrice();
@@ -19,11 +19,13 @@ function App({onFetchEgldPrice, onFetchBurnedMexAmount}) {
 
 	useEffect(() => {
 		onFetchBurnedMexAmount();
+		onFetchMexEconomics();
 		const interval = setInterval(() => {
 			onFetchBurnedMexAmount();
+			onFetchMexEconomics();
 		}, 10000);
 		return () => clearInterval(interval);
-	}, [onFetchBurnedMexAmount]);
+	}, [onFetchBurnedMexAmount, onFetchMexEconomics]);
 
   return <Router>
 		<div className='App d-flex flex-column min-vh-100' theme={'dark'}>
@@ -42,5 +44,9 @@ function App({onFetchEgldPrice, onFetchBurnedMexAmount}) {
 	</Router>
 }
 
-const mapDispatchToProps = dispatch => ({onFetchEgldPrice : () => dispatch(fetchEgldPrice()), onFetchBurnedMexAmount: () => dispatch(fetchBurnedMexAmount())});
+const mapDispatchToProps = dispatch => ({
+	onFetchEgldPrice : () => dispatch(fetchEgldPrice()), 
+	onFetchBurnedMexAmount: () => dispatch(fetchBurnedMexAmount()),
+	onFetchMexEconomics: () => dispatch(fetchMexEconomics()),
+});
 export default connect(null, mapDispatchToProps)(App);

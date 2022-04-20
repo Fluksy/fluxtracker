@@ -17,4 +17,7 @@ export const getAccount = async(searchValue) => {
 	return apiElrond.get(`/usernames/${searchValue}`)
 }
 
+export const getEconomics = async() => {
+	return apiElrond.get('/mex-economics');
+}
 
