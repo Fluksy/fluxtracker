@@ -54,7 +54,7 @@ const Header = ({ setLocale, locale, egldPrice, translations}) => {
 				<Offcanvas.Body>
 					<Nav className="justify-content-end flex-grow-1 pe-3">
 						<NavLink to="/search">{translations?.home}</NavLink>
-						<NavLink to="/mex-stats">Mex Stats</NavLink>
+						<NavLink to="/mex-stats">{translations?.mex_stats}</NavLink>
 						<p className='text-muted'>{translations?.more_coming_soon}</p>
 						<hr />
 						<div className="support d-flex flex-column pe-3">
