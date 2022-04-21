@@ -6,7 +6,6 @@ import { ToastContainer } from 'react-toastify';
 import { connect } from 'react-redux';
 import { fetchBurnedMexAmount, fetchEgldPrice, fetchMexEconomics } from './store/actions';
 import { useEffect } from 'react';
-import { Analytics } from './components/Tracking/Analytics';
 
 function App({onFetchEgldPrice, onFetchBurnedMexAmount, onFetchMexEconomics}) {
 
@@ -29,7 +28,6 @@ function App({onFetchEgldPrice, onFetchBurnedMexAmount, onFetchMexEconomics}) {
 	}, [onFetchBurnedMexAmount, onFetchMexEconomics]);
 
   return <Router>
-		<Analytics />
 		<div className='App d-flex flex-column min-vh-100' theme={'dark'}>
 			<Header />
 			<div className="main-content flex-grow-1 container my-4">
