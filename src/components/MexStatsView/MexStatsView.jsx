@@ -7,7 +7,7 @@ const MexStatsView = ({translations, burnedMexAmount, mexEconomics}) => {
 		<div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
 			<div className="d-flex align-items-center">
 				<span className="text-center me-2">MEX-455c57</span>
-				<img className="ms-2" src="https://media.elrond.com/tokens/asset/MEX-455c57/logo.svg" alt="MEX-455c57" class="token-symbol" width={20}/>
+				<img className="ms-2 token-symbol" src="https://media.elrond.com/tokens/asset/MEX-455c57/logo.svg" alt="MEX-455c57" width={20}/>
 			</div>
 				<span className="text-muted text-center">{`${mexEconomics.price.toFixed(8)} $`}</span>
 		</div>
