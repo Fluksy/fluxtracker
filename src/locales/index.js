@@ -7,9 +7,16 @@ export const KEY_LANGUAGE_LOCAL_STORAGE = 'user-language';
 
 export const locales = {
 	GB : en,
-	FR : fr,
 	RO : ro,
-	ES : es
+	ES : es,
+	FR : fr
 };
+
+export const customLabels = {
+	GB : 'EN',
+	FR : 'FR',
+	RO : 'RO',
+	ES : 'ES',
+}
 
 export const DEFAULT_LANGUAGE = !!localStorage.getItem(KEY_LANGUAGE_LOCAL_STORAGE) ? localStorage.getItem(KEY_LANGUAGE_LOCAL_STORAGE) :  "GB";

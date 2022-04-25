@@ -1,7 +1,7 @@
 import './Header.scss';
 import { ElrondLogo } from '../';
 import ReactFlagsSelect from 'react-flags-select';
-import { locales } from '../../locales';
+import { customLabels, locales } from '../../locales';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setLocale } from 'react-redux-i18n';
@@ -36,11 +36,13 @@ const Header = ({ setLocale, locale, egldPrice, translations}) => {
 					className='pb-0 locales-selector'
 					countries={Object.keys(locales)}
 					showOptionLabel={true}
-					showSelectedLabel={true}
+					showSelectedLabel={false}
 					fullWidth={false}
+					customLabels={customLabels}
 					selected={locale}
 					onSelect={(code) => setLocale(code)}
 				/>
+				
 				<Navbar.Toggle aria-controls="offcanvasNavbar" className='ms-2'/>
 			</div>
 			<Navbar.Offcanvas
