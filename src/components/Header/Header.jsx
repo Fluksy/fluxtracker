@@ -35,8 +35,9 @@ const Header = ({ setLocale, locale, egldPrice, translations}) => {
 				<ReactFlagsSelect
 					className='pb-0 locales-selector'
 					countries={Object.keys(locales)}
-					showOptionLabel={false}
-					showSelectedLabel={false}
+					showOptionLabel={true}
+					showSelectedLabel={true}
+					fullWidth={false}
 					selected={locale}
 					onSelect={(code) => setLocale(code)}
 				/>
