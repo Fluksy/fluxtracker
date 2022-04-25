@@ -5,7 +5,7 @@
     "not_affiliated" : "Project not affiliated with Elrond",
     "when_should_i_restake" : "When should I restake my EGLD?",
     "write_here_your_egld_address_or_herotag" : "Write here your EGLD address or your herotag",
-    "track_my_rewards": "track my rewards",
+    "track_my_rewards": "Track my rewards",
     "bad_address_or_herotag": "Bad address or herotag",
     "no_staking_providers_found": "No staking providers found",
     "node_count": "Node count",
@@ -26,7 +26,7 @@
     "thanks_for_your_support": "Thanks for your support",
     "home": "Home",
     "more_coming_soon": "More coming soon...",
-    "ciculating_supply": "Circulating supply",
+    "circulating_supply": "Circulating supply",
     "total_supply": "Total supply",
     "mex_stats": "MEX Stats"
 }
