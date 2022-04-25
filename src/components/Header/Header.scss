@@ -42,3 +42,12 @@
     --toastify-icon-color-success: var(--success-color);
     --toastify-color-progress-success: var(--primary-color);
 }
+
+.locales-selector {
+    ul {
+        background-color: var(--bg-color--header);
+        border-color: #4e5052;
+        margin-top: 0;
+        border-top: 0;
+    }
+}
