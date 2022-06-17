@@ -8,7 +8,7 @@ import { setLocale } from 'react-redux-i18n';
 import { KEY_LANGUAGE_LOCAL_STORAGE } from '../../locales'
 import { SimpleElrondLogo } from '../CustomIcons/ElrondLogo/ElrondLogo';
 import { Button, Container, Form, FormControl, Navbar, NavDropdown, Offcanvas, Nav} from 'react-bootstrap';
-import { FaClipboard, FaHeart, FaTelegram, FaTwitter } from 'react-icons/fa';
+import { FaClipboard, FaHeart, FaTelegram, FaTwitter, FaGithub } from 'react-icons/fa';
 import {QRCodeSVG} from 'qrcode.react';
 import { LOGO_FONT_SIZE } from '../../config/constants';
 import { toast } from 'react-toastify';
@@ -96,6 +96,7 @@ const Header = ({ setLocale, locale, egldPrice, translations}) => {
 						<div className='d-flex align-items-center justify-content-center' style={{gap: '1rem'}}>
 							<a href='https://twitter.com/Fluxylynxx' target='_blank' rel="noopener noreferrer" className='p-2 d-flex align-items-center justify-content-center' style={{borderRadius: '100%'}}><FaTwitter color='#0088cc' bgColor='white' size={LOGO_FONT_SIZE} /></a>
 							<a href='https://t.me/fluxy56' target='_blank' rel="noopener noreferrer" className='p-2 d-flex align-items-center justify-content-center' style={{borderRadius: '100%'}}><FaTelegram color='#0088cc' bgColor='white' size={LOGO_FONT_SIZE} /></a>
+							<a href='https://github.com/Fluksy/fluxtracker' target='_blank' rel="noopener noreferrer" className='p-2 d-flex align-items-center justify-content-center' style={{borderRadius: '100%'}}><FaGithub color='#0088cc' bgColor='white' size={LOGO_FONT_SIZE} /></a>
 						</div>
 					</Nav>
 				</Offcanvas.Body>
