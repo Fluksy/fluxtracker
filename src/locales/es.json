@@ -20,7 +20,7 @@
     "estimated_days": "Debes esperar una media de {days} días entre re-stake",
     "amount_to_wait_for_next_restake_with_left_amount": "Espera a tener {amount} EGLD antes de hacer re-stake (faltan {left_amount})",
     "amount_to_wait_explained": "Es mejor esperar a la cantidad, que el número de días, ya que las recompensas no son regulares",
-    "you_can_restake_your_staking_rewards": "Deberías volver a tomar las recompensas de las apuestas",
+    "you_can_restake_your_staking_rewards": "Ya puedes hacer re-stake de las recompensas",
     "if_you_want_to_support": "Si quieres apoyar esta herramienta, no dudes en hacer una donación",
     "copied_to_clipboard": "Copiado en el portapapeles",
     "thanks_for_your_support": "Gracias por tu apoyo",
