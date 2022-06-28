@@ -1,6 +1,6 @@
 import { getEgldPrice } from "../config/api.data-elrond";
 import { getEconomics } from "../config/api.elrond";
-import { getBurnedMexTokens } from "../config/api.fluxtracker";
+import { getBurnedMexAmount } from "../config/smart-contract/api.mex";
 
 export const SET_ACCOUNT = 'set egld account';
 export const SET_THEME = 'set theme';
@@ -83,8 +83,8 @@ export const fetchEgldPrice = () => {
 
 export const fetchBurnedMexAmount = () => {
 	return (dispatch) => {
-		return getBurnedMexTokens()
-			.then(({data:{mex_burned_amount}}) => {
+		return getBurnedMexAmount()
+			.then((mex_burned_amount) => {
 				dispatch(setBurnedMexAmount(mex_burned_amount))
 			})
 	}
@@ -93,7 +93,6 @@ export const fetchBurnedMexAmount = () => {
 export const fetchMexEconomics = () => {
 	return (dispatch) => {
 		return getEconomics()
-			.then(({data}) => data)
 			.then(mexEconomics => {
 				dispatch(setMexEconomics(mexEconomics))
 			})

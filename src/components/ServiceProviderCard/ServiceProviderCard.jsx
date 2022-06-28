@@ -3,7 +3,7 @@ import { FaTwitter, FaGithub, FaLink, FaServer, FaUsers } from "react-icons/fa";
 import { RiPercentLine } from "react-icons/ri";
 import { GoVerified } from "react-icons/go";
 import { Card, CardBody, CardFooter, CardHeader, CardImg, CardText, CardTitle } from "reactstrap";
-import { getProviderInfos } from "../../config/api.fluxtracker";
+import { getProviderInfos } from "../../config/delegation-api.elrond";
 import ReactTooltip from 'react-tooltip';
 import './ServiceProviderCard.scss';
 import { connect } from "react-redux";
