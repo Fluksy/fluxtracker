@@ -1,3 +1,4 @@
+import { getEgldPrice } from "../config/api.data-elrond";
 import { getEconomics } from "../config/api.elrond";
 import { getBurnedMexTokens } from "../config/api.fluxtracker";
 
@@ -73,8 +74,7 @@ export const setMexEconomics = (mexEconomics) => {
 
 export const fetchEgldPrice = () => {
 	return (dispatch) => {
-		return fetch('https://data.elrond.com/latest/quoteshistorical/egld/price')
-			.then(response => response.json())
+		return getEgldPrice()
 			.then(price => {
 				dispatch(setEgldPrice(price))
 			})
