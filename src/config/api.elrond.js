@@ -18,6 +18,7 @@ export const getAccount = async(searchValue) => {
 }
 
 export const getEconomics = async() => {
-	return apiElrond.get('/mex-economics');
+	const {data} = await apiElrond.get('/mex-economics');
+	return data;
 }
 

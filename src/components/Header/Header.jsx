@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { setLocale } from 'react-redux-i18n';
 import { KEY_LANGUAGE_LOCAL_STORAGE } from '../../locales'
 import { SimpleElrondLogo } from '../CustomIcons/ElrondLogo/ElrondLogo';
-import { Button, Container, Form, FormControl, Navbar, NavDropdown, Offcanvas, Nav} from 'react-bootstrap';
+import { Button, Container, Navbar, Offcanvas, Nav} from 'react-bootstrap';
 import { FaClipboard, FaHeart, FaTelegram, FaTwitter, FaGithub } from 'react-icons/fa';
 import {QRCodeSVG} from 'qrcode.react';
 import { LOGO_FONT_SIZE } from '../../config/constants';
