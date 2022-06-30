@@ -1,10 +1,10 @@
-const { SmartContract, Address, ContractFunction, ProxyProvider, NetworkConfig, BytesValue } = require('@elrondnetwork/erdjs');
+import { SmartContract, Address, ContractFunction, ProxyProvider, NetworkConfig, BytesValue } from '@elrondnetwork/erdjs';
 
 /**
  * Fetch data from the Elrond API
  * @param {string} erd1Address - erd1 address or herotag
  */
-export default async (req, res) => {
+export const getBurnedMexAmount = async () => {
 	try
 	{
 		let provider = new ProxyProvider("https://gateway.elrond.com");
@@ -22,9 +22,9 @@ export default async (req, res) => {
 				const hexadecimalResponse = Buffer.from(encodedResponse, 'base64').toString('hex');
 				const decimalResponse = parseInt(`0x${hexadecimalResponse}`);
 				const beautifulResponse = decimalResponse / 1000000000000000000;
-				res.status(200).json({mex_burned_amount: beautifulResponse})
+				return beautifulResponse;
 		}
 	} catch (error) {
-			res.status(404).json({error})
+			return 0;
 	}
 }

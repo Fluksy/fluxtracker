@@ -16,10 +16,13 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 
 	const [provider, setProvider] = useState();
 	const [loading, setLoading] = useState(false)
-	const [fees, setFees] = useState(0.0001355);
-	const [period, setPeriod] = useState(365)
+	// const [fees, setFees] = useState(0.0001355);
+	const fees = 0.0001355;
+	// const [period, setPeriod] = useState(365)
+	const period = 365;
 	const [apr, setAPR] = useState(0.00);
-	const [stakedTokens, setStakedTokens] = useState(userActiveStake);
+	// const [stakedTokens, setStakedTokens] = useState(userActiveStake);
+	const stakedTokens = userActiveStake;
 
 	useEffect(() => {
 		const fetchData = async () => {
