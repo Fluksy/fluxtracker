@@ -7,11 +7,10 @@ import { connect } from 'react-redux';
 import { setLocale } from 'react-redux-i18n';
 import { KEY_LANGUAGE_LOCAL_STORAGE } from '../../locales'
 import { SimpleElrondLogo } from '../CustomIcons/ElrondLogo/ElrondLogo';
-import { Button, Container, Navbar, Offcanvas, Nav} from 'react-bootstrap';
-import { FaClipboard, FaHeart, FaTelegram, FaTwitter, FaGithub } from 'react-icons/fa';
+import { Container, Navbar, Offcanvas, Nav} from 'react-bootstrap';
+import { FaHeart, FaTelegram, FaTwitter, FaGithub } from 'react-icons/fa';
 import {QRCodeSVG} from 'qrcode.react';
 import { LOGO_FONT_SIZE } from '../../config/constants';
-import { toast } from 'react-toastify';
 
 const Header = ({ setLocale, locale, egldPrice, translations}) => {
 	return <Navbar className='bg-navbar' expand={false}>
