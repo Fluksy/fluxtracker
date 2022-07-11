@@ -63,17 +63,14 @@ const Header = ({ setLocale, locale, egldPrice, translations}) => {
 						
 						</div>
 					</Nav>
+					<hr />
+					<Nav className='d-flex'>
+						<iframe className='m-auto' title='egld-community' src='https://egld.community/api/products/8cd9d4b3-6ede-4d8a-8a7d-4872506592c3/upvotes/embed' style={{borderRadius: "8px", border: 'none', width: '290px', height: '70px'}}></iframe>
+					</Nav>
 					<Nav>
 						<hr />
 						<span className='flex-wrap' style={{ wordBreak: 'break-word' }} >{translations?.if_you_want_to_support}</span>
 						<label className='flex-wrap align-self-center mt-3' style={{ wordBreak: 'break-word' }} ><span className='me-1' style={{color: '#EC4899'}}>@</span>fluxy</label>
-						<div className='d-flex justify-content-center align-items-center'>
-							<span className='flex-wrap mt-3 me-3' style={{ wordBreak: 'break-word' }}>erd16flffuf6nkqy8ywz3dguu0hm0hlza4mvrwqejtyd7euu2ja8xalqutan2g</span>
-							<Button onClick={() => {
-								navigator.clipboard.writeText('erd16flffuf6nkqy8ywz3dguu0hm0hlza4mvrwqejtyd7euu2ja8xalqutan2g');	
-								toast.success(translations?.copied_to_clipboard, {theme: 'dark', position: toast.POSITION.BOTTOM_RIGHT})
-							}} className='p-2 copyClipboard'><FaClipboard size={LOGO_FONT_SIZE} /></Button>
-						</div>
 						<QRCodeSVG
 							className='align-self-center my-3'
 							value={"erd16flffuf6nkqy8ywz3dguu0hm0hlza4mvrwqejtyd7euu2ja8xalqutan2g"}
