@@ -6,8 +6,13 @@ import { ToastContainer } from 'react-toastify';
 import { connect } from 'react-redux';
 import { fetchBurnedMexAmount, fetchEgldPrice, fetchMexEconomics } from './store/actions';
 import { useEffect } from 'react';
+import splitbee from '@splitbee/web';
 
 function App({onFetchEgldPrice, onFetchBurnedMexAmount, onFetchMexEconomics}) {
+
+	useEffect(() => {
+		splitbee.init();
+	}, []);
 
 	useEffect(() => {
 		onFetchEgldPrice();

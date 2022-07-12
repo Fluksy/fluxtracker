@@ -11,8 +11,14 @@ import { Container, Navbar, Offcanvas, Nav} from 'react-bootstrap';
 import { FaHeart, FaTelegram, FaTwitter, FaGithub } from 'react-icons/fa';
 import {QRCodeSVG} from 'qrcode.react';
 import { LOGO_FONT_SIZE } from '../../config/constants';
+import splitbee from '@splitbee/web';
 
 const Header = ({ setLocale, locale, egldPrice, translations}) => {
+
+	const handleIframeClick = () => {
+		splitbee.track("Click on EGLD community button");
+	}
+
 	return <Navbar className='bg-navbar' expand={false}>
 		<Container fluid>
 			<NavLink to='/search' className="d-flex rounded p-2 align-items-center navbar-brand maiar-shadow">
@@ -64,7 +70,7 @@ const Header = ({ setLocale, locale, egldPrice, translations}) => {
 					</Nav>
 					<hr />
 					<Nav className='d-flex'>
-						<iframe className='m-auto' title='egld-community' src='https://egld.community/api/products/8cd9d4b3-6ede-4d8a-8a7d-4872506592c3/upvotes/embed' style={{borderRadius: "8px", border: 'none', width: '290px', height: '70px'}}></iframe>
+						<iframe onClick={handleIframeClick} className='m-auto' title='egld-community' src='https://egld.community/api/products/8cd9d4b3-6ede-4d8a-8a7d-4872506592c3/upvotes/embed' style={{borderRadius: "8px", border: 'none', width: '290px', height: '70px'}}></iframe>
 					</Nav>
 					<Nav>
 						<hr />
@@ -90,9 +96,9 @@ const Header = ({ setLocale, locale, egldPrice, translations}) => {
 						<span className='flex-wrap align-self-center' style={{ wordBreak: 'break-word' }} >{translations?.thanks_for_your_support}<FaHeart className='text-danger ms-1'></FaHeart></span>
 						<hr />
 						<div className='d-flex align-items-center justify-content-center' style={{gap: '1rem'}}>
-							<a href='https://twitter.com/Fluxylynxx' target='_blank' rel="noopener noreferrer" className='p-2 d-flex align-items-center justify-content-center' style={{borderRadius: '100%'}}><FaTwitter color='#0088cc' bgColor='white' size={LOGO_FONT_SIZE} /></a>
-							<a href='https://t.me/fluxy56' target='_blank' rel="noopener noreferrer" className='p-2 d-flex align-items-center justify-content-center' style={{borderRadius: '100%'}}><FaTelegram color='#0088cc' bgColor='white' size={LOGO_FONT_SIZE} /></a>
-							<a href='https://github.com/Fluksy/fluxtracker' target='_blank' rel="noopener noreferrer" className='p-2 d-flex align-items-center justify-content-center' style={{borderRadius: '100%'}}><FaGithub color='#0088cc' bgColor='white' size={LOGO_FONT_SIZE} /></a>
+							<a data-splitbee-event="Click on Twitter link" href='https://twitter.com/Fluxylynxx' target='_blank' rel="noopener noreferrer" className='p-2 d-flex align-items-center justify-content-center' style={{borderRadius: '100%'}}><FaTwitter color='#0088cc' bgColor='white' size={LOGO_FONT_SIZE} /></a>
+							<a data-splitbee-event="Click on Telegram link" href='https://t.me/fluxy56' target='_blank' rel="noopener noreferrer" className='p-2 d-flex align-items-center justify-content-center' style={{borderRadius: '100%'}}><FaTelegram color='#0088cc' bgColor='white' size={LOGO_FONT_SIZE} /></a>
+							<a data-splitbee-event="Click on GitHub link" href='https://github.com/Fluksy/fluxtracker' target='_blank' rel="noopener noreferrer" className='p-2 d-flex align-items-center justify-content-center' style={{borderRadius: '100%'}}><FaGithub color='#0088cc' bgColor='white' size={LOGO_FONT_SIZE} /></a>
 						</div>
 					</Nav>
 				</Offcanvas.Body>
