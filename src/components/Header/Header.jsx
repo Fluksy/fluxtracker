@@ -11,13 +11,8 @@ import { Container, Navbar, Offcanvas, Nav} from 'react-bootstrap';
 import { FaHeart, FaTelegram, FaTwitter, FaGithub } from 'react-icons/fa';
 import {QRCodeSVG} from 'qrcode.react';
 import { LOGO_FONT_SIZE } from '../../config/constants';
-import splitbee from '@splitbee/web';
 
 const Header = ({ setLocale, locale, egldPrice, translations}) => {
-
-	const handleIframeClick = () => {
-		splitbee.track("Click on EGLD community button");
-	}
 
 	return <Navbar className='bg-navbar' expand={false}>
 		<Container fluid>
@@ -67,10 +62,6 @@ const Header = ({ setLocale, locale, egldPrice, translations}) => {
 							
 						
 						</div>
-					</Nav>
-					<hr />
-					<Nav className='d-flex'>
-						<iframe onClick={handleIframeClick} className='m-auto' title='egld-community' src='https://egld.community/api/products/8cd9d4b3-6ede-4d8a-8a7d-4872506592c3/upvotes/embed' style={{borderRadius: "8px", border: 'none', width: '290px', height: '70px'}}></iframe>
 					</Nav>
 					<Nav>
 						<hr />
