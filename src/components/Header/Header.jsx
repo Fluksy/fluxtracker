@@ -14,7 +14,7 @@ import { LOGO_FONT_SIZE } from '../../config/constants';
 
 const Header = ({ setLocale, locale, egldPrice, translations}) => {
 
-	return <Navbar className='bg-navbar' expand={false}>
+	return <Navbar className='bg-navbar sticky-top' expand={false}>
 		<Container fluid>
 			<NavLink to='/search' className="d-flex rounded p-2 align-items-center navbar-brand maiar-shadow">
 				<ElrondLogo />

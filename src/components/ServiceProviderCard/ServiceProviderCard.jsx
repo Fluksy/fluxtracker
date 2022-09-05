@@ -11,6 +11,7 @@ import { Loader } from '../index';
 import { convertToReadableEgldAmount } from "../../utils/converter";
 import { LOGO_FONT_SIZE } from "../../config/constants";
 import { SimpleElrondLogo } from '../CustomIcons/ElrondLogo/ElrondLogo';
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const ServiceProviderCard = ({contract, translations, claimableRewards, userActiveStake, userUnBondable, egldPrice}) => {
 
@@ -77,6 +78,7 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 					<CardBody className="text-center">
 						<CardText className="d-flex align-items-center justify-content-center" style={{gap: '.5em'}}>
 							<span className="font-weight-bold">{`${translations?.staked_amount} : `} <strong>{convertToReadableEgldAmount(userActiveStake, 2)}</strong></span>
+							{' '}
 							<SimpleElrondLogo
 								style={{
 									height: `1em`,
@@ -89,6 +91,7 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 						</CardText>
 						<CardText className="d-flex align-items-center justify-content-center" style={{gap: '.5em'}}>
 							<span>{`${translations?.claimable_rewards} : `} <strong>{convertToReadableEgldAmount(claimableRewards)}</strong> </span>
+							{' '}
 							<SimpleElrondLogo
 								style={{
 									height: `1em`,
@@ -99,15 +102,17 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 							/>
 							<span>(<strong>{`${(egldPrice*convertToReadableEgldAmount(claimableRewards)).toFixed(2)}$`}</strong>)</span>
 						</CardText>
-						<CardText>{`${translations?.estimated_days.replace('{days}', estimatedNumberOfDays)}`}</CardText>
-							{leftAmountToAccumulate !== 0 ? 
-								<CardText data-tip={translations?.amount_to_wait_explained}>
+							{leftAmountToAccumulate !== 0 ? <div data-tip={translations?.amount_to_wait_explained} className="d-flex justify-content-center align-items-center" style={{gap: ".5em"}}>
+								<AiOutlineInfoCircle className="primary-color" size={LOGO_FONT_SIZE} />
+								<CardText className="bold">
 									{`${translations?.amount_to_wait_for_next_restake_with_left_amount.replace('{amount}', convertToReadableEgldAmount(amountBeforeClaim)).replace('{left_amount}', convertToReadableEgldAmount(leftAmountToAccumulate))}`}
-								</CardText> :
+								</CardText>
+								</div> :
 								<CardText data-tip={translations?.amount_to_wait_explained}>
 									<strong>{`${translations?.you_can_restake_your_staking_rewards}`}</strong>
 								</CardText>
 							}
+						<CardText className="smaller-text">{`${translations?.estimated_days.replace('{days}', estimatedNumberOfDays)}`}</CardText>
 					</CardBody>
 					<CardFooter className="d-flex align-items-center justify-content-between flex-wrap" style={{gap: '.5em'}}>
 						<div className="d-flex align-items-center" style={{gap: '.5em'}}>
