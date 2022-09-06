@@ -67,7 +67,7 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 			{loading && !provider ?
 				<Loader /> :
 				<>
-					<ReactTooltip clickable={true} border />	
+					<ReactTooltip clickable={true} border place="top" effect="solid" type="dark" />	
 					<CardHeader className="d-flex align-items-center">
 						<CardImg src={provider?.identity?.avatar}></CardImg>
 						<CardTitle className="flex-grow-1 text-center">
@@ -75,7 +75,7 @@ const ServiceProviderCard = ({contract, translations, claimableRewards, userActi
 						</CardTitle>
 						{!!provider?.featured && <div data-tip={translations?.featured} className="p-2 d-flex"><GoVerified className='primary-color' size={LOGO_FONT_SIZE} /></div>}
 					</CardHeader>
-					<CardBody className="text-center">
+					<CardBody className="d-flex flex-column justify-content-center align-items-center" style={{ gap: '1em'}}>
 						<CardText className="d-flex align-items-center justify-content-center" style={{gap: '.5em'}}>
 							<span className="font-weight-bold">{`${translations?.staked_amount} : `} <strong>{convertToReadableEgldAmount(userActiveStake, 2)}</strong></span>
 							{' '}
