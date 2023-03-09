@@ -18,7 +18,7 @@ const Header = ({ setLocale, locale, egldPrice, translations }) => {
 			<Container fluid>
 				<NavLink
 					to="/search"
-					className="d-flex rounded p-2 align-items-center navbar-brand maiar-shadow p-0 m-0"
+					className="d-flex rounded align-items-center navbar-brand maiar-shadow p-0 m-0"
 				>
 					<div className="me-md-3 d-none d-md-block">
 						<MultiversxLogo />
