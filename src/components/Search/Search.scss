@@ -1,19 +1,16 @@
 .form {
-
-    // min-height: 400px;
-    background-color: var(--bg-color--header);
-		border-radius: 1em;
+  background-color: var(--bg-color--header);
+  border-radius: 2em;
 }
 
-.form-group{ 
+.form-group {
   position: relative;
   display: block;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .form-style {
   padding: 13px 20px;
-  padding-left: 55px;
   height: 48px;
   width: 100%;
   font-weight: 500;
@@ -34,58 +31,58 @@
   outline: none;
 }
 
-.form-group input:-ms-input-placeholder  {
+.form-group input:-ms-input-placeholder {
   color: #c4c3ca;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
+  transition: all 200ms linear;
 }
-.form-group input::-moz-placeholder  {
+.form-group input::-moz-placeholder {
   color: #c4c3ca;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
+  transition: all 200ms linear;
 }
-.form-group input:-moz-placeholder  {
+.form-group input:-moz-placeholder {
   color: #c4c3ca;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
+  transition: all 200ms linear;
 }
-.form-group input::-webkit-input-placeholder  {
+.form-group input::-webkit-input-placeholder {
   color: #c4c3ca;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
+  transition: all 200ms linear;
 }
-.form-group input:focus:-ms-input-placeholder  {
+.form-group input:focus:-ms-input-placeholder {
   opacity: 0;
   -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
+  transition: all 200ms linear;
 }
-.form-group input:focus::-moz-placeholder  {
+.form-group input:focus::-moz-placeholder {
   opacity: 0;
   -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
+  transition: all 200ms linear;
 }
-.form-group input:focus:-moz-placeholder  {
+.form-group input:focus:-moz-placeholder {
   opacity: 0;
   -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
+  transition: all 200ms linear;
 }
-.form-group input:focus::-webkit-input-placeholder  {
+.form-group input:focus::-webkit-input-placeholder {
   opacity: 0;
   -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
+  transition: all 200ms linear;
 }
 
-.btn{  
+.btn {
   border-radius: 4px;
   height: 44px;
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
-  -webkit-transition : all 200ms linear;
+  -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
   padding: 0 30px;
   letter-spacing: 1px;
@@ -107,30 +104,27 @@
   color: white;
 }
 .btn:active,
-.btn:focus{  
+.btn:focus {
   background-color: var(--success-color);
   color: white;
 }
-.btn:hover{  
+.btn:hover {
   background-color: var(--success-color);
   color: white;
 }
-
-
-
 
 .logo {
-	position: absolute;
-	top: 30px;
-	right: 30px;
-	display: block;
-	z-index: 100;
-	transition: all 250ms linear;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: block;
+  z-index: 100;
+  transition: all 250ms linear;
 }
 .logo img {
-	height: 26px;
-	width: auto;
-	display: block;
+  height: 26px;
+  width: auto;
+  display: block;
 }
 
 button.remove {
@@ -140,8 +134,9 @@ button.remove {
   background-color: transparent;
   border-radius: 100%;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     background-color: transparent;
     color: var(--toastify-color-error);
-  }  
+  }
 }
