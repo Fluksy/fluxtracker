@@ -1,52 +1,53 @@
 .bg-navbar {
-    background: var(--bg-color--header);
-    border-bottom: 1px solid #4e5052 !important;
-    color: var(--font-color-header);
+  background: var(--bg-color--header);
+  border-bottom: 1px solid #4e5052 !important;
+  color: var(--font-color-header);
 }
 
 .navbar-brand.maiar-shadow span {
-    border-left: none;
-    @media (min-width: 576px) { 
-        border-left: 1px solid white;
-    }
+  border-left: none;
+  @media (min-width: 768px) {
+    border-left: 1px solid white;
+  }
 }
 
 .navbar-toggler-icon {
-    filter: invert(0.5);
+  filter: invert(0.5);
 }
 
 #offcanvasNavbar {
-    background: var(--bg-color--header);
-    color: var(--font-color-header);
+  background: var(--bg-color--header);
+  color: var(--font-color-header);
 
-    .btn-close {
-        filter: invert(0.5);
-    }
+  .btn-close {
+    filter: invert(0.5);
+  }
 }
 
 .copyClipboard {
-    height: auto;
-    width: auto;
-    color: var(--primary-color);
+  height: auto;
+  width: auto;
+  color: var(--primary-color);
+  background-color: transparent;
+  border-radius: 100%;
+
+  &:focus,
+  &:hover {
     background-color: transparent;
-    border-radius: 100%;
-  
-    &:focus, &:hover {
-      background-color: transparent;
-      color: var(--success-color);
-    }
+    color: var(--success-color);
+  }
 }
 
 .Toastify__toast-theme--dark {
-    --toastify-color-success: var(--primary-color);
-    --toastify-icon-color-success: var(--success-color);
-    --toastify-color-progress-success: var(--primary-color);
+  --toastify-color-success: var(--primary-color);
+  --toastify-icon-color-success: var(--success-color);
+  --toastify-color-progress-success: var(--primary-color);
 }
 
 .locales-selector {
-    ul {
-        background-color: var(--bg-color--header);
-        border-color: #4e5052;
-        margin-top: 0;
-    }
+  ul {
+    background-color: var(--bg-color--header);
+    border-color: #4e5052;
+    margin-top: 0;
+  }
 }

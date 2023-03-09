@@ -18,12 +18,12 @@ const Header = ({ setLocale, locale, egldPrice, translations }) => {
 			<Container fluid>
 				<NavLink
 					to="/search"
-					className="d-flex rounded p-2 align-items-center navbar-brand maiar-shadow"
+					className="d-flex rounded p-2 align-items-center navbar-brand maiar-shadow p-0 m-0"
 				>
 					<div className="me-md-3 d-none d-md-block">
 						<MultiversxLogo />
 					</div>
-					<span className="p-0 ps-sm-3 text-secondary text-truncate">
+					<span className="p-0 ps-md-3 text-secondary text-truncate">
 						Fluxtracker
 					</span>
 				</NavLink>
