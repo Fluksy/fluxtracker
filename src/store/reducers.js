@@ -42,6 +42,7 @@ export const burnedMexAmount = (state = 0, action) => {
 		case SET_BURNED_MEX_AMOUNT:
 			if (action?.burnedMexAmount)
 				return action.burnedMexAmount;
+			return state;
 		default:
 			return state;
 	}
