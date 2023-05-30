@@ -12,7 +12,7 @@ import {
 	setProviders
 } from "../../store/actions";
 import { Navigate, NavLink } from "react-router-dom";
-import { getAccount } from "../../config/api.elrond";
+import { getAccount } from "../../config/api.multiversx";
 import { toast } from "react-toastify";
 import { Button, Card } from "react-bootstrap";
 import { CardFooter, CardHeader, CardTitle } from "reactstrap";

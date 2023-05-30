@@ -1,5 +1,5 @@
-import { getEgldPrice } from "../config/api.data-elrond";
-import { getEconomics } from "../config/api.elrond";
+import { getEgldPrice } from "../config/api.data-multiversx";
+import { getEconomics } from "../config/api.multiversx";
 import { getBurnedMexAmount } from "../config/smart-contract/api.mex";
 
 export const SET_ACCOUNT = 'set egld account';

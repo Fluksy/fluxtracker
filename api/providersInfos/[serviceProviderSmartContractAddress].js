@@ -1,7 +1,7 @@
-import { getProviderInfos } from '../../src/config/delegation-api.elrond';
+import { getProviderInfos } from '../../src/config/delegation-api.multiversx';
 
 /**
- * Fetch data from the Elrond API
+ * Fetch data from the MultiversX API
  * @param {string} serviceProviderSmartContractAddress - Smart contract address of the service provider
  */
 export default async (req, res) => {

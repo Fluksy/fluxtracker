@@ -1,7 +1,7 @@
-import { getProviders } from '../../src/config/delegation-api.elrond';
+import { getProviders } from '../../src/config/delegation-api.multiversx';
 
 /**
- * Fetch data from the Elrond API
+ * Fetch data from the MultiversX API
  * @param {string} erd1Address - erd1 address or herotag
  */
 export default async (req, res) => {

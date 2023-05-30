@@ -1,17 +1,17 @@
 import * as axios from 'axios';
 
-const delegationApiElrond = axios.create({
-	baseURL: 'https://delegation-api.elrond.com'
+const delegationApiMultiversx = axios.create({
+	baseURL: 'https://delegation-api.multiversx.com'
 })
 
-// Fetch delegation data from Elrond API.
+// Fetch delegation data from MultiversX API.
 // Parameter can be an erd1 address
 export const getProviders = async(erd1Address) => {
-	return delegationApiElrond.get(`/accounts/${erd1Address}/delegations`);
+	return delegationApiMultiversx.get(`/accounts/${erd1Address}/delegations`);
 }
 
-// Fetch Service Provider data from Elrond API.
+// Fetch Service Provider data from MultiversX API.
 // Parameter is a smart contract address
 export const getProviderInfos = async(serviceProviderSmartContractAddress) => {
-	return delegationApiElrond.get(`/providers/${serviceProviderSmartContractAddress}`);
+	return delegationApiMultiversx.get(`/providers/${serviceProviderSmartContractAddress}`);
 }
