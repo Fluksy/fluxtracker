@@ -1,13 +1,13 @@
 import { SmartContract, Address, ContractFunction, ProxyProvider, NetworkConfig, BytesValue } from '@elrondnetwork/erdjs';
 
 /**
- * Fetch data from the Elrond API
+ * Fetch data from the MultiversX API
  * @param {string} erd1Address - erd1 address or herotag
  */
 export const getBurnedMexAmount = async () => {
 	try
 	{
-		let provider = new ProxyProvider("https://gateway.elrond.com");
+		let provider = new ProxyProvider("https://gateway.multiversx.com");
 		await NetworkConfig.getDefault().sync(provider);
 
 		let contract = new SmartContract({ address: new Address("erd1qqqqqqqqqqqqqpgqa0fsfshnff4n76jhcye6k7uvd7qacsq42jpsp6shh2") });

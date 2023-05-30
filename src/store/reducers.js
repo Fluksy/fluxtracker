@@ -40,7 +40,9 @@ export const egldPrice = (state = 0, action) => {
 export const burnedMexAmount = (state = 0, action) => {
 	switch (action.type) {
 		case SET_BURNED_MEX_AMOUNT:
-			return action.burnedMexAmount;
+			if (action?.burnedMexAmount)
+				return action.burnedMexAmount;
+			return state;
 		default:
 			return state;
 	}
